@@ -29,6 +29,10 @@ public class PersonKey implements Serializable {
   //  @PrimaryKey("person_id")
   private UUID id;
 
+/*
+Check if having a constructor without he UUID field will auto generate the UUID. 
+How do I create a TIMEUUID, make sure the auto generated (if possible) UUID is not a TIMEUUID. Is there a class provided by Spring Data for this?
+*/
   public PersonKey(final String firstName, final LocalDateTime dateOfBirth, final UUID id) {
     this.firstName = firstName;
     this.id = id;

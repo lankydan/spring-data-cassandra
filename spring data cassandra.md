@@ -114,4 +114,94 @@ public class Person {
   // getters and setters
 }
 ```
-This class is quite bare as most of the magic has been delegated to the `PersonKey` which we will look at in a minute. `@Table` is added to denote the table it represents in the database. `@Column` is an optional annotation that specifies the name of the column if it does not match the name used in the class. Then the typical constructor and getters and setters are included. If you are using Lombok you an reduce the code in this class even more by using `@Getter`, `@Setter` and `@AllArgsConstructor`, but unfortunately I cannot get it to work when I am using Java 9. The primary key is marked by using the aptly named `@PrimaryKey` annotation. Depending on how your table is constructed the `key` field could be a simple field like a `String` but due to this example using a more interesting key, a separate class has been used..
+This class is quite bare as most of the magic has been delegated to the `PersonKey` which we will look at in a minute. `@Table` is added to denote the table it represents in the database. `@Column` is an optional annotation that specifies the name of the column if it does not match the name used in the class. Then the typical constructor and getters and setters are included. If you are using Lombok you an reduce the code in this class even more by using `@Getter`, `@Setter` and `@AllArgsConstructor`, but unfortunately I cannot get it to work when I am using Java 9. The primary key is marked by using the aptly named `@PrimaryKey` annotation. Depending on how your table is constructed the `key` field could be a simple field like a `String` but due to this example using a more interesting key, a separate class has been used.
+
+Before I carry on and explain how the key works, an idea of the whole table structure would be helpful.
+```sql
+CREATE TABLE people(
+  first_name TEXT,
+  date_of_birth TIMESTAMP,
+  person_id UUID,
+  last_name TEXT,
+  salary DOUBLE,
+  PRIMARY KEY ((first_name), date_of_birth, person_id)
+) WITH CLUSTERING ORDER BY (date_of_birth ASC, person_id DESC);
+```
+Here we have a pretty simple table if your familiar with Cassandra. If you not, but have used SQL it will still seem readable but with some slight differences which mainly lie with how the primary key is formed. As I mentioned earlier the primary key consists of partition and clustering columns, in this example the only partition column is `first_name` and the clustering columns are `date_of_birth` and `person_id`. I will leave the explanaition there as it should be enough to get you through the next part.
+Now onto the `PersonKey`.
+```java
+@PrimaryKeyClass
+public class PersonKey implements Serializable {
+
+  @PrimaryKeyColumn(name = "first_name", type = PARTITIONED)
+  private String firstName;
+
+  @PrimaryKeyColumn(name = "date_of_birth", ordinal = 0)
+  private LocalDateTime dateOfBirth;
+
+  @PrimaryKeyColumn(name = "person_id", ordinal = 1, ordering = DESCENDING)
+  private UUID id;
+
+  public PersonKey(final String firstName, final LocalDateTime dateOfBirth, final UUID id) {
+    this.firstName = firstName;
+    this.id = id;
+    this.dateOfBirth = dateOfBirth;
+  }
+
+  // getters and setters
+
+  // equals and hashcode
+}
+```
+An external key class needs to implement `Serializable` and have it's `equals` and `hashcode` methods defined. Once that is all done, all we need to do is define how the primary key is formed by using `@PrimaryKeyColumn` on the properties that make up the key. `PrimaryKeyColumn` comes with a set of properties to give you all the control you need over the key. 
+- `name` - I don't think I need to explain this one, but I will anyway, it represents the name of the column in the table. This is not necessary if property matches the field name. 
+- `type` - Takes in either `PrimaryKeyType.PARTITIONED` or `PrimaryKeyType.CLUSTERED`. It will be `CLUSTERED` by default so you only really need to mark the partition columns with `PARTITIONED`.
+- ordinal - Determines the order that the ordering is applied in. The lowest value is applied first, therefore in the above example `dateOfBirth`'s order is applied before `id`.
+- `ordering` - Determines the direction that ordering is applied. The value can be `Ordering.ASCENDING` or `Ordering.DESCENDING` with `DESCENDING` being the default value.
+Look back at the table definition and see how the annotations in the `PersonKey` match up to the primary key. 
+
+One last thing about the `PersonKey`, although it's not particularly important have a look at the order that I have defined the properties. They follow a Cassandra convention to put the columns of the primary key into the table in the same order that they appear in the key. This probably isn't as needed in the scenario due the key being in a separate class, but I do think it helps make the purpose of the key easier to follow.
+
+Next up we have the `PersonRepository` that creates queries for us aslong as we follow the correct naming conventions.
+```java
+@Repository
+public interface PersonRepository extends CassandraRepository<Person, PersonKey> {
+
+  List<Person> findByKeyFirstName(final String firstName);
+
+  List<Person> findByKeyFirstNameAndKeyDateOfBirthGreaterThan(
+      final String firstName, final LocalDateTime dateOfBirth);
+
+  // Don't do this!!
+  @Query(allowFiltering = true)
+  List<Person> findByLastName(final String lastName);
+
+}
+```
+The `PersonRepository` extends `CassandraRepository`, marks down the table object it represents and the type that it's primary key is made up of. If you have used Spring Data before you will know that queries can be infered from their method names and if you didn't know that, well I just told you so now you do!
+
+Below is a quick run through on what query is generated for the method `findByKeyFirstNameAndKeyDateOfBirthGreaterThan`.
+```sql
+SELECT * FROM People WHERE first_name = 'firstName input' and date_of_birth > 'dateOfBirth input';
+```
+Note that to query the `first_name` the string `KeyFirst` must be included in the method name, due to the `firstName` property existing in the `key` property of `Person`.
+
+I have also added another query to the code but I am recommending you not to use a similar query unless your realy really need to. Lets start from the beginning of how this method was constructed.
+```java
+List<Person> findByLastName(final String lastName);
+```
+Now I was very happy to find that this query failed meaning that it kept in line with how Cassandra works and nothing happened behind the curtains to allow it to work. If you tried to run this query you will see the following output.
+```
+Caused by: com.datastax.driver.core.exceptions.InvalidQueryException: Cannot execute this query as it might involve data filtering and thus may have unpredictable performance. If you want to execute this query despite the performance unpredictability, use ALLOW FILTERING
+```
+The exception is telling us that all we need to do to fix this is to use "ALLOW FILTERING" so why don't we just go and add that in and carry on? Well we could do that but it does also mention that it will lead to unpredictable performance and there lies the reason why I recommend that you stay away from it unless there is no other choice.
+
+The reason why it is recommend not to use "ALLOW FILTERING" is it requires the whole table (or partition CORRECT!!?!!?!) to be read as a column that is not part of the primary key is being queried. Cassandra's read speed comes from querying the partition and clustering columns as it knows where they lie in memory and can just grab them right away without having to look at the rest of the table (CORRECT!!!!!????).
+
+If you decide you really want to use filtering then simply use the code used in the example (added below aswell).
+```java
+@Query(allowFiltering = true)
+List<Person> findByLastName(final String lastName);
+```
+
+In conclusion Cassandra is a NoSQL database that allows you to mange large amounts of data across serves while maintaining high availability and fast reads but at the cost of decreased consistency. Spring Data Cassandra is one way of bridging the gap between your Java code and Cassandra that allowing you to form tables from within POJOs and write queries by simply typing a valid method name.
