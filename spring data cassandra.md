@@ -1,24 +1,3 @@
-does the table need to be created first? or does spring create the table for me like it does in mongodb
-
-```sql
-create table people(
-  first_name text,
-  date_of_birth timestamp,
-  person_id uuid,
-  last_name text,
-  salary double,
-  primary key((first_name), date_of_birth, person_id)
-) with clustering order by (date_of_birth asc, person_id desc);
-```
-
-the datastax driver knows not to allow you to query full table scans without adding @Query(allowFiltering = true). It throws an exception if a query is used that does not include the partition key.
-
-```
-Caused by: com.datastax.driver.core.exceptions.InvalidQueryException: Cannot execute this query as it might involve data filtering and thus may have unpredictable performance. If you want to execute this query despite the performance unpredictability, use ALLOW FILTERING
-```
-
------------------------------------------------------------------------------
-
 I have recently been learning Apache Cassandra to use at work and I think it is about time I consolidated my experience within a blog post. But rather than focusing on how Cassandra works itself this post will look at how to use Spring Data Cassandra.
 
 I know I just said I wouldn't focus on how Cassandra works, but if I don't give you any sort of background information your going to feel incomplete. Apache Cassandra is a NoSQL distributed database for managing large amounts of data across many servers while providing high availability at the cost of decreased consistency. High availability is achieved by replicating data to multiple nodes allowing one or many nodes to go down (the hamster stopped providing power to the machine) without stopping the system as a whole from working since there is still at least one node still running. Of course if all the nodes stop working then your screwed and Cassandra won't save you!  
@@ -140,7 +119,7 @@ CREATE TABLE people_by_first_name(
   PRIMARY KEY ((first_name), date_of_birth, person_id)
 ) WITH CLUSTERING ORDER BY (date_of_birth ASC, person_id DESC);
 ```
-Here we have a pretty simple table if your familiar with Cassandra. If your not, but have used SQL it will still seem readable but with some slight differences which mainly lie with how the primary key is formed. As I mentioned earlier the primary key consists of partition and clustering columns, in this example the only partition column is `first_name` and the clustering columns are `date_of_birth` and `person_id`. I will leave the explanaition there as it should be enough to get you through the next part.
+Here we have a pretty simple table if your familiar with Cassandra. If your not, but have used SQL it will still seem readable but with some slight differences which mainly lie with how the primary key is formed. As I mentioned earlier the primary key consists of partition and clustering columns, in this example the only partition column is `first_name` and the clustering columns are `date_of_birth` and `person_id`. I will leave the explanation there as it should be enough to get you through the next part.
 Now onto the `PersonKey`.
 ```java
 @PrimaryKeyClass
@@ -170,11 +149,7 @@ An external key class needs to implement `Serializable` and have it's `equals` a
 - `name` - I don't think I need to explain this one, but I will anyway, it represents the name of the column in the table. This is not necessary if property matches the field name. 
 - `type` - Takes in either `PrimaryKeyType.PARTITIONED` or `PrimaryKeyType.CLUSTERED`. It will be `CLUSTERED` by default so you only really need to mark the partition columns with `PARTITIONED`.
 - `ordinal` - Determines the order that the ordering is applied in. The lowest value is applied first, therefore in the above example `dateOfBirth`'s order is applied before `id`.
-<<<<<<< HEAD
-- `ordering` - Determines the direction that ordering is applied. The value can be `Ordering.ASCENDING` or `Ordering.DESCENDING` with `ASCENDING` being the default value.
-=======
 - `ordering` - Determines the direction that ordering is applied to a clustering column. Therefore if the field is also marked with `PARTITIONED` the value ordering provides is ignored. The value can be `Ordering.ASCENDING` or `Ordering.DESCENDING` with `ASCENDING` being the default value.
->>>>>>> 13aced133393eeb8aadeb73fcce97f2616fb4353
 Look back at the table definition and see how the annotations in the `PersonKey` match up to the primary key. 
 
 One last thing about the `PersonKey`, although it's not particularly important have a look at the order that I have defined the properties. They follow a Cassandra convention of putting the columns of the primary key into the table in the same order that they appear in the key. This probably isn't as needed in this scenario due the key being in a separate class, but I do think it helps make the purpose of the key easier to follow.
@@ -195,7 +170,7 @@ public interface PersonRepository extends CassandraRepository<Person, PersonKey>
 
 }
 ```
-The `PersonRepository` extends `CassandraRepository`, marks down the table object it represents and the type that it's primary key is made up of. If you have used Spring Data before you will know that queries can be infered from their method names and if you didn't know that, well I just told you so now you do!
+The `PersonRepository` extends `CassandraRepository`, marks down the table object it represents and the type that it's primary key is made up of. If you have used Spring Data before you will know that queries can be inferred from their method names and if you didn't know that, well I just told you so now you do!
 
 Below is a quick run through on what query is generated for the method `findByKeyFirstNameAndKeyDateOfBirthGreaterThan`.
 ```sql
@@ -215,7 +190,7 @@ The exception is telling us that all we need to do to fix this is to use "ALLOW 
 
 "ALLOW FILTERING" is needed if you want to query a field that is not part of the primary key, which is why querying by `last_name` causes it to fail. The reason why it is recommended not to use "ALLOW FILTERING" is because it requires the whole table or partition to be read and then goes on to filter out the invalid records. Cassandra's read speed comes from querying the partition and clustering columns as it knows where they lie in memory and can just grab them right away without having to look at the rest of the table (CORRECT!!!!!????).
 
-If you decide you really want to use filtering then simply use the code used in the example (added below aswell).
+If you decide you really want to use filtering then simply use the code used in the example (added below as well).
 ```java
 @Query(allowFiltering = true)
 List<Person> findByLastName(final String lastName);
