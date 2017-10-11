@@ -196,7 +196,7 @@ Caused by: com.datastax.driver.core.exceptions.InvalidQueryException: Cannot exe
 ```
 The exception is telling us that all we need to do to fix this is to use "ALLOW FILTERING" so why don't we just go and add that in and carry on? Well we could do that but it does also mention that it will lead to unpredictable performance and there lies the reason why I recommend that you stay away from it unless there is no other choice.
 
-The reason why it is recommended not to use "ALLOW FILTERING" is it requires the whole table (or partition CORRECT!!?!!?!) to be read as a column that is not part of the primary key is being queried. Cassandra's read speed comes from querying the partition and clustering columns as it knows where they lie in memory and can just grab them right away without having to look at the rest of the table (CORRECT!!!!!????).
+"ALLOW FILTERING" is needed if you want to query a field that is not part of the primary key, which is why querying by `last_name` causes it to fail. The reason why it is recommended not to use "ALLOW FILTERING" is because it requires the whole table or partition to be read and then goes on to filter out the invalid records. Cassandra's read speed comes from querying the partition and clustering columns as it knows where they lie in memory and can just grab them right away without having to look at the rest of the table (CORRECT!!!!!????).
 
 If you decide you really want to use filtering then simply use the code used in the example (added below aswell).
 ```java

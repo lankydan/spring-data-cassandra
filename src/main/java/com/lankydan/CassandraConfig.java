@@ -3,6 +3,7 @@ package com.lankydan;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.cassandra.config.AbstractCassandraConfiguration;
+import org.springframework.data.cassandra.config.SchemaAction;
 import org.springframework.data.cassandra.repository.config.EnableCassandraRepositories;
 
 @Configuration
@@ -66,8 +67,12 @@ public class CassandraConfig extends AbstractCassandraConfiguration {
 //    return new CassandraMappingContext();
 //  }
 //
-//  @Override
-//  public String[] getEntityBasePackages() {
-//    return new String[] {"com.lankydan.cassandra"};
-//  }
+  @Override
+  public SchemaAction getSchemaAction() {
+    return SchemaAction.CREATE_IF_NOT_EXISTS;
+  }
+  @Override
+ public String[] getEntityBasePackages() {
+   return new String[] {"com.lankydan.cassandra"};
+ }
 }
