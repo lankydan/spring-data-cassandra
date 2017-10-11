@@ -7,9 +7,11 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/lankydan/cassandra/Person.class" afterPath="$PROJECT_DIR$/target/classes/com/lankydan/cassandra/Person.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/lankydan/cassandra/PersonKey.class" afterPath="$PROJECT_DIR$/target/classes/com/lankydan/cassandra/PersonKey.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/lankydan/cassandra/PersonRepository.class" afterPath="$PROJECT_DIR$/target/classes/com/lankydan/cassandra/PersonRepository.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.project" afterPath="$PROJECT_DIR$/.project" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/spring-boot-cassandra.iml" afterPath="$PROJECT_DIR$/spring-boot-cassandra.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/lankydan/CassandraConfig.java" afterPath="$PROJECT_DIR$/src/main/java/com/lankydan/CassandraConfig.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/application.properties" afterPath="$PROJECT_DIR$/target/classes/application.properties" />
     </list>
@@ -388,12 +390,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1507372387126</updated>
-      <workItem from="1507723375234" duration="615000" />
+      <workItem from="1507723375234" duration="1202000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="615000" />
+    <option name="totallyTimeSpent" value="1202000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />

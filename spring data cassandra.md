@@ -86,8 +86,8 @@ The magic to this class is all provided by `AbstractCassandraConfiguration` and 
 Next up we have the entity, record or whatever you want to call it. Now is a good time to talk about table design in Cassandra and its difference from relational databases. In Cassandra a table represents a query, which might sound very wierd to you if you normally work with relational databases that store data and uses joins to created a query. By having a table represent a query better performance can be achieved from reads and allows the actual query itself to be very straight forward as all the thinking has to be done when designing the table.
 
 Another important aspect of Cassandra I want to touch on is the use of primary keys. Following on from the idea of a table representing a query, primary keys are very important to the structure of the table and thus how the table can be used. There are two aspects to a Cassandra primary key, partition columns and clustering columns. 
-- Partition columns - Data is stored in partitions (sections/segments) in Cassandra and the partition columns are used to distinguish where the data is persisted. This is what makes reading from Cassandra fast as similar data is packed together in these partitions and then retrieved together when queried. These columns can only be queried used equality operators (= or !=).
-- Clustering columns - These are used to provide uniqueness and ordering within Cassandra. They also allow you to use EQUALITY AND???? conditional operators (such as >=) which cannot be used on partition columns.
+- Partition columns - Data is stored in partitions (sections/segments) in Cassandra and the partition columns are used to distinguish where the data is persisted. This is what makes reading from Cassandra fast as similar data is packed together in these partitions and then retrieved together when queried. These columns are normally queried with equality operators (= or !=).
+- Clustering columns - These are used to provide uniqueness and ordering within Cassandra. They also allow you to use equality and conditional operators (such as >=).
 
 All other columns cannot be used in query conditions without forcing Cassandra to allow them and therefore can only be mentioned when specifying the columns to return.
 
@@ -156,8 +156,8 @@ public class PersonKey implements Serializable {
 An external key class needs to implement `Serializable` and have it's `equals` and `hashcode` methods defined. Once that is done, all we need to do is define how the primary key is formed by using `@PrimaryKeyColumn` on the properties that make up the key. `PrimaryKeyColumn` comes with a set of properties to give you all the control you need over the key. 
 - `name` - I don't think I need to explain this one, but I will anyway, it represents the name of the column in the table. This is not necessary if property matches the field name. 
 - `type` - Takes in either `PrimaryKeyType.PARTITIONED` or `PrimaryKeyType.CLUSTERED`. It will be `CLUSTERED` by default so you only really need to mark the partition columns with `PARTITIONED`.
-- ordinal - Determines the order that the ordering is applied in. The lowest value is applied first, therefore in the above example `dateOfBirth`'s order is applied before `id`.
-- `ordering` - Determines the direction that ordering is applied. The value can be `Ordering.ASCENDING` or `Ordering.DESCENDING` with `ASCENDING` being the default value.
+- `ordinal` - Determines the order that the ordering is applied in. The lowest value is applied first, therefore in the above example `dateOfBirth`'s order is applied before `id`.
+- `ordering` - Determines the direction that ordering is applied to a clustering column. Therefore if the field is also marked with `PARTITIONED` the value ordering provides is ignored. The value can be `Ordering.ASCENDING` or `Ordering.DESCENDING` with `ASCENDING` being the default value.
 Look back at the table definition and see how the annotations in the `PersonKey` match up to the primary key. 
 
 One last thing about the `PersonKey`, although it's not particularly important have a look at the order that I have defined the properties. They follow a Cassandra convention of putting the columns of the primary key into the table in the same order that they appear in the key. This probably isn't as needed in this scenario due the key being in a separate class, but I do think it helps make the purpose of the key easier to follow.
@@ -182,7 +182,7 @@ The `PersonRepository` extends `CassandraRepository`, marks down the table objec
 
 Below is a quick run through on what query is generated for the method `findByKeyFirstNameAndKeyDateOfBirthGreaterThan`.
 ```sql
-SELECT * FROM people_by_first_name WHERE first_name = 'firstName input' and date_of_birth > 'dateOfBirth input';
+SELECT * FROM people_by_first_name WHERE first_name = [firstName input] and date_of_birth > [dateOfBirth input];
 ```
 Note that to query the `first_name` the string `KeyFirst` must be included in the method name, due to the `firstName` property existing in the `key` property of `Person`.
 
