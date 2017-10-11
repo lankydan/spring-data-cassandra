@@ -63,6 +63,9 @@ public class CassandraConfig extends AbstractCassandraConfiguration {
   @Value("${cassandra.keyspace}")
   private String keySpace;
 
+  @Value("${cassandra.basePackages}")
+  private String basePackages;
+
   @Override
   protected String getKeyspaceName() {
     return keySpace;
@@ -77,11 +80,21 @@ public class CassandraConfig extends AbstractCassandraConfiguration {
   protected int getPort() {
     return port;
   }
+
+  @Override
+  public SchemaAction getSchemaAction() {
+    return SchemaAction.CREATE_IF_NOT_EXISTS;
+  }
+
+  @Override
+  public String[] getEntityBasePackages() {
+    return new String[] {basePackages};
+  }
 }
 ```
 This class is pretty empty. The first time I wrote this class it had a lot more to it, but after looking at the Spring code all the beans that are needed have already been created and we just need to provide some extra values to get it started. To be honest the class above could be decreased even more if we assumed that the contact points only contained localhost and the default port Cassandra runs on is being used.
 
-The magic to this class is all provided by `AbstractCassandraConfiguration` and the `@EnableCassandraRepositories` annotation. The only method that 100% needs to be implemented is `getKeyspaceName`. This property (and the others I included) have been defined in `application.properties` and read into the configuration class using the `@Value` annotation. `@EnableCassandraRepositories` is an annotation that might look familiar if you have used Spring Data with other databases which allows your repositories generate query implementations for you (we will get into this later).
+The magic to this class is all provided by `AbstractCassandraConfiguration` and the `@EnableCassandraRepositories` annotation. The only method that 100% needs to be implemented is `getKeyspaceName`. There are many more methods that you can override from `AbstractCassandraConfiguration` for greater control over how your application works. In this example I included `getSchemaAction` to allow Spring to create tables that do not exist if there is a entity with `@Table` defined (we will look at this annotation later), this will default to`SchemaAction.NONE` if not added. `getEntityBasePackages` has also been used to specify where the entities live although in this example it is not required as the entities are in a child package of the configuration class. The properties have been defined in `application.properties` and read into the configuration class using the `@Value` annotation. `@EnableCassandraRepositories` is an annotation that might look familiar if you have used Spring Data with other databases which allows your repositories generate query implementations for you (we will get into this later).
 
 Next up we have the entity, record or whatever you want to call it. Now is a good time to talk about table design in Cassandra and its difference from relational databases. In Cassandra a table represents a query, which might sound very wierd to you if you normally work with relational databases that store data and uses joins to created a query. By having a table represent a query better performance can be achieved from reads and allows the actual query itself to be very straight forward as all the thinking has to be done when designing the table.
 
@@ -156,7 +169,7 @@ public class PersonKey implements Serializable {
 An external key class needs to implement `Serializable` and have it's `equals` and `hashcode` methods defined. Once that is done, all we need to do is define how the primary key is formed by using `@PrimaryKeyColumn` on the properties that make up the key. `PrimaryKeyColumn` comes with a set of properties to give you all the control you need over the key. 
 - `name` - I don't think I need to explain this one, but I will anyway, it represents the name of the column in the table. This is not necessary if property matches the field name. 
 - `type` - Takes in either `PrimaryKeyType.PARTITIONED` or `PrimaryKeyType.CLUSTERED`. It will be `CLUSTERED` by default so you only really need to mark the partition columns with `PARTITIONED`.
-- ordinal - Determines the order that the ordering is applied in. The lowest value is applied first, therefore in the above example `dateOfBirth`'s order is applied before `id`.
+- `ordinal` - Determines the order that the ordering is applied in. The lowest value is applied first, therefore in the above example `dateOfBirth`'s order is applied before `id`.
 - `ordering` - Determines the direction that ordering is applied. The value can be `Ordering.ASCENDING` or `Ordering.DESCENDING` with `ASCENDING` being the default value.
 Look back at the table definition and see how the annotations in the `PersonKey` match up to the primary key. 
 

@@ -4,16 +4,7 @@ import org.springframework.data.cassandra.core.mapping.Column;
 import org.springframework.data.cassandra.core.mapping.PrimaryKey;
 import org.springframework.data.cassandra.core.mapping.Table;
 
-/*
-Need to think about how to define a entity due to cassandra tables representing a query.
-Does that mean that I need a new entity for each query?
- */
-@Table("people")
-// @Getter
-// @Setter
-// @Builder
-// @ToString
-// @AllArgsConstructor
+@Table("people_by_first_name2")
 public class Person {
 
   @PrimaryKey private PersonKey key;

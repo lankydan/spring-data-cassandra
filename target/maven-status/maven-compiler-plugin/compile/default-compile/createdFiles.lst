@@ -1,0 +1,5 @@
+com\lankydan\cassandra\PersonRepository.class
+com\lankydan\Application.class
+com\lankydan\cassandra\Person.class
+com\lankydan\CassandraConfig.class
+com\lankydan\cassandra\PersonKey.class
