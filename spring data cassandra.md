@@ -178,7 +178,7 @@ SELECT * FROM people_by_first_name WHERE first_name = [firstName input] and date
 ```
 Note that to query the `first_name` the string `KeyFirst` must be included in the method name, due to the `firstName` property existing in the `key` property of `Person`.
 
-I have also added another query to the code but I urge you not to use a similar query unless your realy really need to. Lets start from the beginning of how this method was constructed.
+I have also added another query to the code but I urge you not to use a similar query unless your really really need to. Lets start from the beginning of how this method was constructed.
 ```java
 List<Person> findByLastName(final String lastName);
 ```
