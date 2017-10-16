@@ -1,8 +1,9 @@
 package com.lankydan;
 
-import com.lankydan.cassandra.Person;
-import com.lankydan.cassandra.PersonKey;
-import com.lankydan.cassandra.PersonRepository;
+import com.lankydan.cassandra.keyspaceA.person.KeyspaceAPersonRepository;
+import com.lankydan.cassandra.keyspaceB.person.KeyspaceBPersonRepository;
+import com.lankydan.cassandra.person.Person;
+import com.lankydan.cassandra.person.PersonKey;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -14,7 +15,9 @@ import java.util.UUID;
 @SpringBootApplication
 public class Application implements CommandLineRunner {
 
-  @Autowired private PersonRepository personRepository;
+  @Autowired private KeyspaceAPersonRepository keyspaceAPersonRepository;
+
+  @Autowired private KeyspaceBPersonRepository keyspaceBPersonRepository;
 
   public static void main(final String args[]) {
     SpringApplication.run(Application.class);
@@ -22,19 +25,19 @@ public class Application implements CommandLineRunner {
 
   @Override
   public void run(String... args) throws Exception {
-    final PersonKey key = new PersonKey("John", LocalDateTime.now(), UUID.randomUUID());
-    final Person p = new Person(key, "Doe", 1000);
-    personRepository.insert(p);
+    final PersonKey johnsKey = new PersonKey("John", LocalDateTime.now(), UUID.randomUUID());
+    final Person john = new Person(johnsKey, "Doe", 1000);
+    keyspaceAPersonRepository.insert(john);
 
-    System.out.println("find by first name");
-    personRepository.findByKeyFirstName("John").forEach(System.out::println);
+    final PersonKey bobsKey = new PersonKey("Bob", LocalDateTime.now(), UUID.randomUUID());
+    final Person bob = new Person(bobsKey, "Bob", 2000);
+    keyspaceBPersonRepository.insert(bob);
 
-    System.out.println("find by first name and date of birth greater than date");
-    personRepository
-        .findByKeyFirstNameAndKeyDateOfBirthGreaterThan("John", LocalDateTime.now().minusDays(1))
-        .forEach(System.out::println);
+    System.out.println("find all in keyspace a");
+    keyspaceAPersonRepository.findAll().forEach(System.out::println);
 
-    System.out.println("find by last name");
-    personRepository.findByLastName("Doe").forEach(System.out::println);
+    System.out.println("find all in keyspace b");
+    keyspaceBPersonRepository.findAll().forEach(System.out::println);
+
   }
 }
