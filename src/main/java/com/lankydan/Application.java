@@ -8,8 +8,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-
+import org.springframework.context.ApplicationContext;
 import java.time.LocalDateTime;
+import java.util.Arrays;
 import java.util.UUID;
 
 @SpringBootApplication
@@ -19,12 +20,15 @@ public class Application implements CommandLineRunner {
 
   @Autowired private KeyspaceBPersonRepository keyspaceBPersonRepository;
 
+  @Autowired private ApplicationContext context;
+
   public static void main(final String args[]) {
     SpringApplication.run(Application.class);
   }
 
   @Override
   public void run(String... args) throws Exception {
+    // Arrays.asList(context.getBeanDefinitionNames()).forEach(System.out::println);
     final PersonKey johnsKey = new PersonKey("John", LocalDateTime.now(), UUID.randomUUID());
     final Person john = new Person(johnsKey, "Doe", 1000);
     keyspaceAPersonRepository.insert(john);

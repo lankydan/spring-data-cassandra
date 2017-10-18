@@ -6,8 +6,8 @@ import org.springframework.data.cassandra.config.AbstractCassandraConfiguration;
 import org.springframework.data.cassandra.config.SchemaAction;
 import org.springframework.data.cassandra.repository.config.EnableCassandraRepositories;
 
-@Configuration
-@EnableCassandraRepositories
+// @Configuration
+// @EnableCassandraRepositories
 public abstract class CassandraConfig extends AbstractCassandraConfiguration {
 
   @Value("${cassandra.contactpoints}")
@@ -19,8 +19,8 @@ public abstract class CassandraConfig extends AbstractCassandraConfiguration {
   // @Value("${cassandra.keyspace}")
   // private String keySpace;
 
-  // @Value("${cassandra.basepackages}")
-  // private String basePackages;
+  @Value("${cassandra.entitypackage}")
+  private String entityPackage;
 
   // @Override
   // protected String getKeyspaceName() {
@@ -44,6 +44,6 @@ public abstract class CassandraConfig extends AbstractCassandraConfiguration {
 
   // @Override
   // public String[] getEntityBasePackages() {
-  //   return new String[] {basePackages};
+  //   return new String[] {entityPackage};
   // }
 }
