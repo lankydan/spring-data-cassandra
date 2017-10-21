@@ -29,19 +29,19 @@ public class Application implements CommandLineRunner {
   @Override
   public void run(String... args) throws Exception {
     // Arrays.asList(context.getBeanDefinitionNames()).forEach(System.out::println);
-    final PersonKey johnsKey = new PersonKey("John", LocalDateTime.now(), UUID.randomUUID());
-    final Person john = new Person(johnsKey, "Doe", 1000);
-    keyspaceAPersonRepository.insert(john);
+    // final PersonKey johnsKey = new PersonKey("John", LocalDateTime.now(), UUID.randomUUID());
+    // final Person john = new Person(johnsKey, "Doe", 1000);
+    // keyspaceAPersonRepository.insert(john);
 
-    final PersonKey bobsKey = new PersonKey("Bob", LocalDateTime.now(), UUID.randomUUID());
-    final Person bob = new Person(bobsKey, "Bob", 2000);
-    keyspaceBPersonRepository.insert(bob);
+    // final PersonKey bobsKey = new PersonKey("Bob", LocalDateTime.now(), UUID.randomUUID());
+    // final Person bob = new Person(bobsKey, "Bob", 2000);
+    // keyspaceBPersonRepository.insert(bob);
 
-    System.out.println("find all in keyspace a");
-    keyspaceAPersonRepository.findAll().forEach(System.out::println);
+    // System.out.println("find all in keyspace a");
+    // keyspaceAPersonRepository.findAll().forEach(System.out::println);
 
-    System.out.println("find all in keyspace b");
-    keyspaceBPersonRepository.findAll().forEach(System.out::println);
+    // System.out.println("find all in keyspace b");
+    // keyspaceBPersonRepository.findAll().forEach(System.out::println);
 
   }
 }

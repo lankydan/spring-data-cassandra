@@ -15,6 +15,18 @@ Im not that sure my code will actually work. If they both extend the AbstractCas
 
 Yeah I think everything needs to be defined manually to support multiple keyspaces.
 
+Not recommended to create multiple sessions due to overhead? Use CassandraTemplateFactory instead? -> This seems to be the correct solution as specified by the docs
+- By using `CassandraTemplate` will my tables still be auto created into the correct keyspaces? Or will I now have to create the tables myself. Actually at what point are the tables created? On startup or on insert? If on insert then the template should create it for me.
+-> It creates the tables on startup, so I need to observe how it creates the tables when using the `CassandraTemplate` -> most likely will only make the tables for the keyspace related to the `AbstractCassandraConfiguration` beans. Therefore I should probably disable the schema creation and create the tables manually.
+-> Have most things created in the base config class so there is only one session, cluster etc...
+-> Should try talk about why using one session / one cluster?
+Do the entities need to defined in different packages for them to be persisted correctly? 
+
+- keyspaces can be mentioned directly in the query
+ - `select * from mySecondKeyspace.people_by_first_name;`
+ - not really the most elegant way of querying
+ - is there a builder type method on `CassandraTemplate` that allows me to specify the keyspce I want to use?
+ - "down vote It seems that it is recommended to use fully qualified keyspace names in queries managed by one session, as the session is not very lightweight." This guy says that mentioning in query is the way to do it.
 --------------------------------------
 
 Following on from my previous post [Getting started with Spring Data Cassandra](ENTER URL) we will be looking at using multiple keyspaces within an application. This will be a relative short post due to most of the content being covered in the earlier post allowing us to focus on the code needed to allow multiple keyspaces and reasons why you might want to switch from a single from a single one.
