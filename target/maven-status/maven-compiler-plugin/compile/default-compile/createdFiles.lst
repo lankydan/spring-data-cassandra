@@ -1,13 +1,5 @@
+com\lankydan\cassandra\person\PersonRepository.class
 com\lankydan\cassandra\CassandraConfig.class
 com\lankydan\Application.class
-com\lankydan\cassandra\keyspaceA\person\KeyspaceAPersonRepository.class
-com\lankydan\cassandra\keyspaceA\KeyspaceACassandraConfig.class
-com\lankydan\cassandra\keyspaceA\person\Person.class
-com\lankydan\cassandra\person\Person.class
-com\lankydan\cassandra\keyspaceB\person\Person.class
-com\lankydan\cassandra\person\PersonRepository.class
-com\lankydan\cassandra\keyspaceA\person\PersonKey.class
-com\lankydan\cassandra\keyspaceB\person\KeyspaceBPersonRepository.class
-com\lankydan\cassandra\keyspaceB\person\PersonKey.class
 com\lankydan\cassandra\person\PersonKey.class
-com\lankydan\cassandra\keyspaceB\KeyspaceBCassandraConfig.class
+com\lankydan\cassandra\person\Person.class
