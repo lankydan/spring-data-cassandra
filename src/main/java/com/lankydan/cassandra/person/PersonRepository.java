@@ -7,5 +7,4 @@ import java.util.List;
 public interface PersonRepository extends CassandraRepository<Person, PersonKey> {
 
   List<Person> findByKeyFirstName(final String firstName);
-
 }

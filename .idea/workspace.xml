@@ -2,37 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="76090c93-6aed-4d78-ba7e-615db58413d1" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/lankydan/cassandra/keyspace/a/KeyspaceACassandraConfig.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/lankydan/cassandra/keyspace/b/KeyspaceBCassandraConfig.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/git.ignore" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/lankydan/cassandra/keyspaceA/KeyspaceACassandraConfig.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/lankydan/cassandra/keyspaceA/person/PersonKey.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/lankydan/cassandra/keyspaceB/KeyspaceBCassandraConfig.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/application.properties" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/lankydan/Application.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/lankydan/cassandra/CassandraConfig.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/lankydan/cassandra/keyspaceA/KeyspaceACassandraConfig.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/lankydan/cassandra/keyspaceA/person/KeyspaceAPersonRepository.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/lankydan/cassandra/keyspaceA/person/PersonKey.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/lankydan/cassandra/keyspaceB/KeyspaceBCassandraConfig.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/lankydan/cassandra/keyspaceB/person/KeyspaceBPersonRepository.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/lankydan/cassandra/person/Person.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/lankydan/cassandra/person/PersonKey.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/lankydan/cassandra/person/PersonRepository.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/spring-boot-cassandra-1.0.0.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/spring-boot-cassandra-1.0.0.jar.original" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/lankydan/cassandra/keyspaceA/person/KeyspaceAPersonRepository.java" afterPath="$PROJECT_DIR$/src/main/java/com/lankydan/cassandra/keyspace/a/person/KeyspaceAPersonRepository.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/lankydan/cassandra/keyspaceB/person/KeyspaceBPersonRepository.java" afterPath="$PROJECT_DIR$/src/main/java/com/lankydan/cassandra/keyspace/b/person/KeyspaceBPersonRepository.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.settings/org.eclipse.core.resources.prefs" afterPath="$PROJECT_DIR$/.settings/org.eclipse.core.resources.prefs" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/multiple keyspaces.md" afterPath="$PROJECT_DIR$/multiple keyspaces.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/lankydan/Application.java" afterPath="$PROJECT_DIR$/src/main/java/com/lankydan/Application.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/lankydan/cassandra/CassandraConfig.java" afterPath="$PROJECT_DIR$/src/main/java/com/lankydan/cassandra/CassandraConfig.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/lankydan/cassandra/person/PersonRepository.java" afterPath="$PROJECT_DIR$/src/main/java/com/lankydan/cassandra/person/PersonRepository.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/application.properties" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -127,11 +98,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="application.properties" pinned="false" current-in-tab="true">
+      <file leaf-file-name="application.properties" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="108">
               <caret line="6" column="60" lean-forward="false" selection-start-line="6" selection-start-column="60" selection-end-line="6" selection-end-column="60" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PersonRepository.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/lankydan/cassandra/person/PersonRepository.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="144">
+              <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -182,7 +163,6 @@
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/lankydan/cassandra/keyspaceA/KeyspaceACassandraConfig.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/lankydan/cassandra/keyspaceB/KeyspaceBCassandraConfig.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lankydan/cassandra/person/PersonRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/lankydan/cassandra/keyspaceA/person/KeyspaceAPersonRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/lankydan/cassandra/keyspaceB/person/KeyspaceBPersonRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/lankydan/cassandra/CassandraConfig.java" />
@@ -191,6 +171,7 @@
         <option value="$PROJECT_DIR$/src/main/java/com/lankydan/cassandra/keyspace/b/KeyspaceBCassandraConfig.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/lankydan/Application.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/lankydan/cassandra/keyspace/a/person/KeyspaceAPersonRepository.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lankydan/cassandra/person/PersonRepository.java" />
       </list>
     </option>
   </component>
@@ -310,6 +291,14 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="b" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="spring-boot-cassandra" type="b2602c69:ProjectViewProjectNode" />
+              <item name="spring-boot-cassandra" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="person" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="spring-boot-cassandra" type="b2602c69:ProjectViewProjectNode" />
@@ -700,13 +689,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lankydan/cassandra/person/PersonRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/lankydan/cassandra/person/PersonKey.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
@@ -801,6 +783,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="108">
           <caret line="6" column="60" lean-forward="false" selection-start-line="6" selection-start-column="60" selection-end-line="6" selection-end-column="60" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lankydan/cassandra/person/PersonRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
           <folding />
         </state>
       </provider>
