@@ -30,6 +30,14 @@ public class CassandraKeyspaceTemplate extends CassandraTemplate {
 
   /*
   The downside to implementing it in this way is that some of the CassandraTemplate methods are so general you can pass a Statement into the method, because of this you cannt garentee that the keyspace it is using is the default keyspace or the keyspace defined in the constructor.
+
+  So what is the solution? If it does extend the CassandraTemplate then it cannot be injected as an interface but if I make it require the keyspace to be passed in it also cannot extend it due to its interface being different.
+
+  Is the only solution to define a new interface with keyspace methods? Or to not create a keyspace cassandra template and move all the logic to the repository. If a keyspace cassandra template is created can it be used in a CassandraRepository to infer methods? -> this would be a very helpful solution as it means logic is not lost.
+
+  Where does the default keyspace name get used? Maybe leaving these methods as they are is correct. But if they dont specify a keyspace
+
+  I really dont think it is possible due to the unreliability of keyspace used. Therefore the best solution is to not extend CassandraTemplate and instead define an independent bean with its own interface -> stick to using the repository?.
   */
   @Override
   public <T> T selectOne(Statement statement, Class<T> entityClass) {
