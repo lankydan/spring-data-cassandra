@@ -24,6 +24,7 @@ public class CassandraConfig extends AbstractCassandraConfiguration {
 
   @Override
   protected String getKeyspaceName() {
+    System.err.println("I HAVE ACTUALLY DONE SOMETHING");
     return keySpace;
   }
 

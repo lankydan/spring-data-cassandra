@@ -1,4 +1,4 @@
-package com.lankydan.cassandra.keyspace.a;
+package com.lankydan.cassandra.keyspace.b;
 
 import com.lankydan.cassandra.AbstractKeyspaceCassandraRepository;
 import com.lankydan.cassandra.Person;
@@ -12,11 +12,11 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 //@Repository
-public class KeyspaceAPersonRepositoryImpl
+public class KeyspaceBPersonRepositoryImpl
     extends AbstractKeyspaceCassandraRepository<Person, PersonKey>
-    implements KeyspaceAPersonRepository {
+    implements KeyspaceBPersonRepository {
 
-  public KeyspaceAPersonRepositoryImpl(
+  public KeyspaceBPersonRepositoryImpl(
       final CassandraOperations cassandraTemplate,
       final CassandraEntityInformation entityInformation,
       final String keyspace) {
