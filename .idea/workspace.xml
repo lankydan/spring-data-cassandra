@@ -2,15 +2,26 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="76090c93-6aed-4d78-ba7e-615db58413d1" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/lankydan/cassandra/AbstractKeyspaceCassandraRepository.java" afterPath="$PROJECT_DIR$/src/main/java/com/lankydan/cassandra/SimpleCassandraKeyspaceRepository.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/spring-boot-cassandra-1.0.0.jar" afterPath="$PROJECT_DIR$/target/spring-boot-cassandra-1.0.0.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.classpath" afterPath="$PROJECT_DIR$/.classpath" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.settings/org.eclipse.jdt.core.prefs" afterPath="$PROJECT_DIR$/.settings/org.eclipse.jdt.core.prefs" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/spring-boot-cassandra.iml" afterPath="$PROJECT_DIR$/spring-boot-cassandra.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/lankydan/Application.java" afterPath="$PROJECT_DIR$/src/main/java/com/lankydan/Application.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/lankydan/cassandra/AbstractKeyspaceCassandraRepository.java" afterPath="$PROJECT_DIR$/src/main/java/com/lankydan/cassandra/AbstractKeyspaceCassandraRepository.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/lankydan/cassandra/CassandraConfig.java" afterPath="$PROJECT_DIR$/src/main/java/com/lankydan/cassandra/CassandraConfig.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/lankydan/cassandra/PersonRepository.java" afterPath="$PROJECT_DIR$/src/main/java/com/lankydan/cassandra/PersonRepository.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/lankydan/cassandra/keyspace/a/KeyspaceACassandraConfig.java" afterPath="$PROJECT_DIR$/src/main/java/com/lankydan/cassandra/keyspace/a/KeyspaceACassandraConfig.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/lankydan/cassandra/keyspace/a/KeyspaceAPersonRepository.java" afterPath="$PROJECT_DIR$/src/main/java/com/lankydan/cassandra/keyspace/a/KeyspaceAPersonRepository.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/lankydan/cassandra/keyspace/a/KeyspaceAPersonRepositoryImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/lankydan/cassandra/keyspace/a/KeyspaceAPersonRepositoryImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/lankydan/cassandra/keyspace/b/KeyspaceBCassandraConfig.java" afterPath="$PROJECT_DIR$/src/main/java/com/lankydan/cassandra/keyspace/b/KeyspaceBCassandraConfig.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/lankydan/cassandra/keyspace/b/KeyspaceBPersonRepository.java" afterPath="$PROJECT_DIR$/src/main/java/com/lankydan/cassandra/keyspace/b/KeyspaceBPersonRepository.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/lankydan/cassandra/keyspace/b/KeyspaceBPersonRepositoryImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/lankydan/cassandra/keyspace/b/KeyspaceBPersonRepositoryImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/application.properties" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/application.properties" afterPath="$PROJECT_DIR$/target/classes/application.properties" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" />
@@ -26,21 +37,74 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="SimpleCassandraRepository.java" pinned="false" current-in-tab="false">
-        <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-cassandra/2.0.0.RC3/spring-data-cassandra-2.0.0.RC3-sources.jar!/org/springframework/data/cassandra/repository/support/SimpleCassandraRepository.java">
+      <file leaf-file-name="Application.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/lankydan/Application.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="367">
-              <caret line="61" column="56" lean-forward="false" selection-start-line="61" selection-start-column="56" selection-end-line="61" selection-end-column="56" />
+            <state relative-caret-position="284">
+              <caret line="56" column="66" lean-forward="true" selection-start-line="56" selection-start-column="66" selection-end-line="56" selection-end-column="66" />
+              <folding>
+                <element signature="e#976#977#0" expanded="true" />
+                <element signature="e#1026#1027#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UUIDs.java" pinned="false" current-in-tab="false">
+        <entry file="jar://$MAVEN_REPOSITORY$/com/datastax/cassandra/cassandra-driver-core/3.3.0/cassandra-driver-core-3.3.0-sources.jar!/com/datastax/driver/core/utils/UUIDs.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="332">
+              <caret line="154" column="19" lean-forward="true" selection-start-line="154" selection-start-column="19" selection-end-line="154" selection-end-column="19" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="KeyspaceACassandraConfig.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/lankydan/cassandra/keyspace/a/KeyspaceACassandraConfig.java">
+      <file leaf-file-name="PersonKey.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/lankydan/cassandra/PersonKey.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="663">
-              <caret line="38" column="7" lean-forward="true" selection-start-line="38" selection-start-column="7" selection-end-line="41" selection-end-column="5" />
+            <state relative-caret-position="80">
+              <caret line="14" column="13" lean-forward="false" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Qualifier.java" pinned="false" current-in-tab="false">
+        <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-beans/5.0.0.RC4/spring-beans-5.0.0.RC4-sources.jar!/org/springframework/beans/factory/annotation/Qualifier.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="188">
+              <caret line="39" column="24" lean-forward="false" selection-start-line="39" selection-start-column="24" selection-end-line="39" selection-end-column="24" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Autowired.java" pinned="false" current-in-tab="false">
+        <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-beans/5.0.0.RC4/spring-beans-5.0.0.RC4-sources.jar!/org/springframework/beans/factory/annotation/Autowired.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="49">
+              <caret line="63" column="8" lean-forward="false" selection-start-line="63" selection-start-column="8" selection-end-line="63" selection-end-column="8" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="KeyspaceBPersonRepositoryImpl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/lankydan/cassandra/keyspace/b/KeyspaceBPersonRepositoryImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="368">
+              <caret line="32" column="3" lean-forward="false" selection-start-line="32" selection-start-column="3" selection-end-line="32" selection-end-column="3" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PersonRepositoryImpl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/lankydan/cassandra/PersonRepositoryImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="308">
+              <caret line="27" column="11" lean-forward="true" selection-start-line="27" selection-start-column="11" selection-end-line="27" selection-end-column="11" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -51,8 +115,112 @@
       <file leaf-file-name="CassandraEntityInformation.java" pinned="false" current-in-tab="false">
         <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-cassandra/2.0.0.RC3/spring-data-cassandra-2.0.0.RC3-sources.jar!/org/springframework/data/cassandra/repository/query/CassandraEntityInformation.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
+            <state relative-caret-position="176">
               <caret line="25" column="17" lean-forward="false" selection-start-line="25" selection-start-column="17" selection-end-line="25" selection-end-column="17" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="KeyspaceBPersonRepository.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/lankydan/cassandra/keyspace/b/KeyspaceBPersonRepository.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="80">
+              <caret line="10" column="107" lean-forward="false" selection-start-line="10" selection-start-column="107" selection-end-line="10" selection-end-column="107" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PersonRepository.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/lankydan/cassandra/PersonRepository.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="64">
+              <caret line="9" column="17" lean-forward="false" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="KeyspaceAPersonRepositoryImpl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/lankydan/cassandra/keyspace/a/KeyspaceAPersonRepositoryImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="8">
+              <caret line="17" column="2" lean-forward="true" selection-start-line="17" selection-start-column="2" selection-end-line="26" selection-end-column="3" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="KeyspaceAPersonRepository.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/lankydan/cassandra/keyspace/a/KeyspaceAPersonRepository.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="80">
+              <caret line="10" column="62" lean-forward="false" selection-start-line="10" selection-start-column="62" selection-end-line="10" selection-end-column="62" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CqlOperations.java" pinned="false" current-in-tab="false">
+        <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-cassandra/2.0.0.RC3/spring-data-cassandra-2.0.0.RC3-sources.jar!/org/springframework/data/cassandra/core/cql/CqlOperations.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-374">
+              <caret line="257" column="28" lean-forward="false" selection-start-line="257" selection-start-column="28" selection-end-line="257" selection-end-column="28" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="application.properties" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="48">
+              <caret line="3" column="37" lean-forward="false" selection-start-line="3" selection-start-column="37" selection-end-line="3" selection-end-column="37" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="KeyspaceACassandraConfig.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/lankydan/cassandra/keyspace/a/KeyspaceACassandraConfig.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="336">
+              <caret line="31" column="29" lean-forward="true" selection-start-line="31" selection-start-column="29" selection-end-line="31" selection-end-column="29" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="KeyspaceBCassandraConfig.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/lankydan/cassandra/keyspace/b/KeyspaceBCassandraConfig.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="302">
+              <caret line="36" column="0" lean-forward="false" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MappingCassandraConverter.java" pinned="false" current-in-tab="false">
+        <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-cassandra/2.0.0.RC3/spring-data-cassandra-2.0.0.RC3-sources.jar!/org/springframework/data/cassandra/core/convert/MappingCassandraConverter.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="98">
+              <caret line="444" column="39" lean-forward="false" selection-start-line="444" selection-start-column="39" selection-end-line="444" selection-end-column="39" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MappingContext.java" pinned="false" current-in-tab="false">
+        <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-commons/2.0.0.RC3/spring-data-commons-2.0.0.RC3-sources.jar!/org/springframework/data/mapping/context/MappingContext.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="194">
+              <caret line="140" column="12" lean-forward="false" selection-start-line="140" selection-start-column="12" selection-end-line="140" selection-end-column="12" />
               <folding />
             </state>
           </provider>
@@ -61,68 +229,18 @@
       <file leaf-file-name="MappingCassandraEntityInformation.java" pinned="false" current-in-tab="false">
         <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-cassandra/2.0.0.RC3/spring-data-cassandra-2.0.0.RC3-sources.jar!/org/springframework/data/cassandra/repository/support/MappingCassandraEntityInformation.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="208">
-              <caret line="47" column="31" lean-forward="false" selection-start-line="47" selection-start-column="31" selection-end-line="47" selection-end-column="31" />
+            <state relative-caret-position="186">
+              <caret line="35" column="13" lean-forward="false" selection-start-line="35" selection-start-column="13" selection-end-line="35" selection-end-column="13" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CassandraRepositoryFactory.java" pinned="false" current-in-tab="false">
-        <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-cassandra/2.0.0.RC3/spring-data-cassandra-2.0.0.RC3-sources.jar!/org/springframework/data/cassandra/repository/support/CassandraRepositoryFactory.java">
+      <file leaf-file-name="SimpleCassandraKeyspaceRepository.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/lankydan/cassandra/SimpleCassandraKeyspaceRepository.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="208">
-              <caret line="96" column="59" lean-forward="true" selection-start-line="96" selection-start-column="59" selection-end-line="96" selection-end-column="59" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="RepositoryFactoryBeanSupport.java" pinned="false" current-in-tab="false">
-        <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-commons/2.0.0.RC3/spring-data-commons-2.0.0.RC3-sources.jar!/org/springframework/data/repository/core/support/RepositoryFactoryBeanSupport.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="200">
-              <caret line="198" column="41" lean-forward="true" selection-start-line="198" selection-start-column="41" selection-end-line="198" selection-end-column="41" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Repositories.java" pinned="false" current-in-tab="false">
-        <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-commons/2.0.0.RC3/spring-data-commons-2.0.0.RC3-sources.jar!/org/springframework/data/repository/support/Repositories.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="217">
-              <caret line="178" column="78" lean-forward="false" selection-start-line="178" selection-start-column="78" selection-end-line="178" selection-end-column="78" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DomainClassConverter.java" pinned="false" current-in-tab="false">
-        <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-commons/2.0.0.RC3/spring-data-commons-2.0.0.RC3-sources.jar!/org/springframework/data/repository/support/DomainClassConverter.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="421">
-              <caret line="238" column="68" lean-forward="false" selection-start-line="238" selection-start-column="68" selection-end-line="238" selection-end-column="68" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="RepositoryFactorySupport.java" pinned="false" current-in-tab="false">
-        <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-commons/2.0.0.RC3/spring-data-commons-2.0.0.RC3-sources.jar!/org/springframework/data/repository/core/support/RepositoryFactorySupport.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="194">
-              <caret line="391" column="71" lean-forward="false" selection-start-line="391" selection-start-column="54" selection-end-line="391" selection-end-column="71" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CassandraRepositoryBean.java" pinned="false" current-in-tab="false">
-        <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-cassandra/2.0.0.RC3/spring-data-cassandra-2.0.0.RC3-sources.jar!/org/springframework/data/cassandra/repository/cdi/CassandraRepositoryBean.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="352">
-              <caret line="69" column="45" lean-forward="false" selection-start-line="69" selection-start-column="45" selection-end-line="69" selection-end-column="45" />
+            <state relative-caret-position="1264">
+              <caret line="99" column="18" lean-forward="true" selection-start-line="99" selection-start-column="18" selection-end-line="99" selection-end-column="18" />
               <folding />
             </state>
           </provider>
@@ -140,12 +258,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>cluster</find>
-      <find>keyspace</find>
-      <find>saveall</find>
-      <find>findallbyid</find>
-      <find>insert</find>
-      <find>mapping</find>
       <find>existsbyid</find>
       <find>delete(</find>
       <find>deletebyid</find>
@@ -165,10 +277,17 @@
       <find>CassandraAdminOperations cassandraTemplatecassa</find>
       <find>entityinf</find>
       <find>information</find>
-      <find>entityinformation</find>
       <find>CassandraEntityInformation</find>
       <find>mappingco</find>
       <find>EntityInformation</find>
+      <find>entityinformation</find>
+      <find>get</find>
+      <find>keyspace</find>
+      <find>Simple</find>
+      <find>operations</find>
+      <find>templa</find>
+      <find>eq(</find>
+      <find>where</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -183,23 +302,25 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/main/resources/app.properties" />
-        <option value="$PROJECT_DIR$/src/main/resources/application.properties" />
         <option value="$PROJECT_DIR$/src/main/java/com/lankydan/cassandra/Person.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/lankydan/CassandraConfig.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/lankydan/cassandra/PersonKey.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/lankydan/cassandra/CassandraKeyspaceTemplate.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lankydan/cassandra/PersonRepository.java" />
-        <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/spring-boot-cassandra.iml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lankydan/Application.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lankydan/cassandra/CassandraConfig.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lankydan/cassandra/keyspace/a/KeyspaceAPersonRepository.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lankydan/cassandra/keyspace/b/KeyspaceBPersonRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/lankydan/cassandra/AbstractKeyspaceCassandraRepository.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lankydan/cassandra/SimpleCassandraKeyspaceRepository.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lankydan/cassandra/CassandraConfig.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lankydan/cassandra/keyspace/a/KeyspaceAPersonRepositoryImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/lankydan/cassandra/keyspace/b/KeyspaceBPersonRepositoryImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/lankydan/cassandra/keyspace/b/KeyspaceBCassandraConfig.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lankydan/cassandra/keyspace/a/KeyspaceAPersonRepositoryImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lankydan/cassandra/keyspace/b/KeyspaceBPersonRepository.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lankydan/cassandra/keyspace/a/KeyspaceAPersonRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/lankydan/cassandra/keyspace/a/KeyspaceACassandraConfig.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lankydan/cassandra/PersonRepository.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lankydan/cassandra/PersonRepositoryImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/application.properties" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lankydan/Application.java" />
       </list>
     </option>
   </component>
@@ -232,11 +353,11 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
-    <option name="width" value="2576" />
-    <option name="height" value="1616" />
+    <option name="width" value="1382" />
+    <option name="height" value="744" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="1" id="Add" />
@@ -256,238 +377,354 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
+      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
-              <item name="spring-boot-cassandra" type="b2602c69:ProjectViewProjectNode" />
-              <item name="spring-boot-cassandra" type="462c0819:PsiDirectoryNode" />
+              <item name="spring-data-cassandra" type="b2602c69:ProjectViewProjectNode" />
+              <item name="spring-data-cassandra" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="spring-boot-cassandra" type="b2602c69:ProjectViewProjectNode" />
-              <item name="spring-boot-cassandra" type="462c0819:PsiDirectoryNode" />
+              <item name="spring-data-cassandra" type="b2602c69:ProjectViewProjectNode" />
+              <item name="spring-data-cassandra" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="spring-boot-cassandra" type="b2602c69:ProjectViewProjectNode" />
-              <item name="spring-boot-cassandra" type="462c0819:PsiDirectoryNode" />
+              <item name="spring-data-cassandra" type="b2602c69:ProjectViewProjectNode" />
+              <item name="spring-data-cassandra" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="spring-boot-cassandra" type="b2602c69:ProjectViewProjectNode" />
-              <item name="spring-boot-cassandra" type="462c0819:PsiDirectoryNode" />
+              <item name="spring-data-cassandra" type="b2602c69:ProjectViewProjectNode" />
+              <item name="spring-data-cassandra" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="spring-boot-cassandra" type="b2602c69:ProjectViewProjectNode" />
-              <item name="spring-boot-cassandra" type="462c0819:PsiDirectoryNode" />
+              <item name="spring-data-cassandra" type="b2602c69:ProjectViewProjectNode" />
+              <item name="spring-data-cassandra" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="lankydan" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="spring-boot-cassandra" type="b2602c69:ProjectViewProjectNode" />
-              <item name="spring-boot-cassandra" type="462c0819:PsiDirectoryNode" />
+              <item name="spring-data-cassandra" type="b2602c69:ProjectViewProjectNode" />
+              <item name="spring-data-cassandra" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="lankydan" type="462c0819:PsiDirectoryNode" />
               <item name="cassandra" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="spring-boot-cassandra" type="b2602c69:ProjectViewProjectNode" />
-              <item name="spring-boot-cassandra" type="462c0819:PsiDirectoryNode" />
+              <item name="spring-data-cassandra" type="b2602c69:ProjectViewProjectNode" />
+              <item name="spring-data-cassandra" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="lankydan" type="462c0819:PsiDirectoryNode" />
+              <item name="cassandra" type="462c0819:PsiDirectoryNode" />
+              <item name="keyspace" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="spring-data-cassandra" type="b2602c69:ProjectViewProjectNode" />
+              <item name="spring-data-cassandra" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="lankydan" type="462c0819:PsiDirectoryNode" />
+              <item name="cassandra" type="462c0819:PsiDirectoryNode" />
+              <item name="keyspace" type="462c0819:PsiDirectoryNode" />
               <item name="a" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="spring-boot-cassandra" type="b2602c69:ProjectViewProjectNode" />
-              <item name="spring-boot-cassandra" type="462c0819:PsiDirectoryNode" />
+              <item name="spring-data-cassandra" type="b2602c69:ProjectViewProjectNode" />
+              <item name="spring-data-cassandra" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="lankydan" type="462c0819:PsiDirectoryNode" />
+              <item name="cassandra" type="462c0819:PsiDirectoryNode" />
+              <item name="keyspace" type="462c0819:PsiDirectoryNode" />
               <item name="b" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="spring-boot-cassandra" type="b2602c69:ProjectViewProjectNode" />
-              <item name="spring-boot-cassandra" type="462c0819:PsiDirectoryNode" />
+              <item name="spring-data-cassandra" type="b2602c69:ProjectViewProjectNode" />
+              <item name="spring-data-cassandra" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="spring-boot-cassandra" type="b2602c69:ProjectViewProjectNode" />
+              <item name="spring-data-cassandra" type="b2602c69:ProjectViewProjectNode" />
               <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
             </path>
             <path>
-              <item name="spring-boot-cassandra" type="b2602c69:ProjectViewProjectNode" />
+              <item name="spring-data-cassandra" type="b2602c69:ProjectViewProjectNode" />
               <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="Maven: org.springframework.boot:spring-boot-autoconfigure:2.0.0.M4" type="70bed36:NamedLibraryElementNode" />
+              <item name="Maven: com.datastax.cassandra:cassandra-driver-core:3.3.0" type="70bed36:NamedLibraryElementNode" />
             </path>
             <path>
-              <item name="spring-boot-cassandra" type="b2602c69:ProjectViewProjectNode" />
+              <item name="spring-data-cassandra" type="b2602c69:ProjectViewProjectNode" />
               <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="Maven: org.springframework.boot:spring-boot-autoconfigure:2.0.0.M4" type="70bed36:NamedLibraryElementNode" />
-              <item name="spring-boot-autoconfigure-2.0.0.M4.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="Maven: com.datastax.cassandra:cassandra-driver-core:3.3.0" type="70bed36:NamedLibraryElementNode" />
+              <item name="cassandra-driver-core-3.3.0.jar" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="spring-boot-cassandra" type="b2602c69:ProjectViewProjectNode" />
+              <item name="spring-data-cassandra" type="b2602c69:ProjectViewProjectNode" />
               <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="Maven: org.springframework.boot:spring-boot-autoconfigure:2.0.0.M4" type="70bed36:NamedLibraryElementNode" />
-              <item name="spring-boot-autoconfigure-2.0.0.M4.jar" type="462c0819:PsiDirectoryNode" />
-              <item name="autoconfigure" type="462c0819:PsiDirectoryNode" />
+              <item name="Maven: com.datastax.cassandra:cassandra-driver-core:3.3.0" type="70bed36:NamedLibraryElementNode" />
+              <item name="cassandra-driver-core-3.3.0.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="core" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="spring-boot-cassandra" type="b2602c69:ProjectViewProjectNode" />
+              <item name="spring-data-cassandra" type="b2602c69:ProjectViewProjectNode" />
               <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="Maven: org.springframework.boot:spring-boot-autoconfigure:2.0.0.M4" type="70bed36:NamedLibraryElementNode" />
-              <item name="spring-boot-autoconfigure-2.0.0.M4.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="Maven: com.datastax.cassandra:cassandra-driver-core:3.3.0" type="70bed36:NamedLibraryElementNode" />
+              <item name="cassandra-driver-core-3.3.0.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="core" type="462c0819:PsiDirectoryNode" />
+              <item name="querybuilder" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="spring-data-cassandra" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: com.datastax.cassandra:cassandra-driver-core:3.3.0" type="70bed36:NamedLibraryElementNode" />
+              <item name="cassandra-driver-core-3.3.0.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="core" type="462c0819:PsiDirectoryNode" />
+              <item name="utils" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="spring-data-cassandra" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: org.springframework.boot:spring-boot:2.0.0.M4" type="70bed36:NamedLibraryElementNode" />
+            </path>
+            <path>
+              <item name="spring-data-cassandra" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: org.springframework.boot:spring-boot:2.0.0.M4" type="70bed36:NamedLibraryElementNode" />
+              <item name="spring-boot-2.0.0.M4.jar" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="spring-data-cassandra" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: org.springframework.boot:spring-boot:2.0.0.M4" type="70bed36:NamedLibraryElementNode" />
+              <item name="spring-boot-2.0.0.M4.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="boot" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="spring-data-cassandra" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: org.springframework.data:spring-data-cassandra:2.0.0.RC3" type="70bed36:NamedLibraryElementNode" />
+            </path>
+            <path>
+              <item name="spring-data-cassandra" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: org.springframework.data:spring-data-cassandra:2.0.0.RC3" type="70bed36:NamedLibraryElementNode" />
+              <item name="spring-data-cassandra-2.0.0.RC3.jar" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="spring-data-cassandra" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: org.springframework.data:spring-data-cassandra:2.0.0.RC3" type="70bed36:NamedLibraryElementNode" />
+              <item name="spring-data-cassandra-2.0.0.RC3.jar" type="462c0819:PsiDirectoryNode" />
               <item name="cassandra" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="spring-boot-cassandra" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="Maven: org.springframework.data:spring-data-cassandra:2.0.0.RC3" type="70bed36:NamedLibraryElementNode" />
-            </path>
-            <path>
-              <item name="spring-boot-cassandra" type="b2602c69:ProjectViewProjectNode" />
+              <item name="spring-data-cassandra" type="b2602c69:ProjectViewProjectNode" />
               <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
               <item name="Maven: org.springframework.data:spring-data-cassandra:2.0.0.RC3" type="70bed36:NamedLibraryElementNode" />
               <item name="spring-data-cassandra-2.0.0.RC3.jar" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="spring-boot-cassandra" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="Maven: org.springframework.data:spring-data-cassandra:2.0.0.RC3" type="70bed36:NamedLibraryElementNode" />
-              <item name="spring-data-cassandra-2.0.0.RC3.jar" type="462c0819:PsiDirectoryNode" />
-              <item name="config" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="spring-boot-cassandra" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="Maven: org.springframework.data:spring-data-cassandra:2.0.0.RC3" type="70bed36:NamedLibraryElementNode" />
-              <item name="spring-data-cassandra-2.0.0.RC3.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="cassandra" type="462c0819:PsiDirectoryNode" />
               <item name="core" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="spring-boot-cassandra" type="b2602c69:ProjectViewProjectNode" />
+              <item name="spring-data-cassandra" type="b2602c69:ProjectViewProjectNode" />
               <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
               <item name="Maven: org.springframework.data:spring-data-cassandra:2.0.0.RC3" type="70bed36:NamedLibraryElementNode" />
               <item name="spring-data-cassandra-2.0.0.RC3.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="cassandra" type="462c0819:PsiDirectoryNode" />
+              <item name="core" type="462c0819:PsiDirectoryNode" />
               <item name="cql" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="spring-boot-cassandra" type="b2602c69:ProjectViewProjectNode" />
+              <item name="spring-data-cassandra" type="b2602c69:ProjectViewProjectNode" />
               <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
               <item name="Maven: org.springframework.data:spring-data-cassandra:2.0.0.RC3" type="70bed36:NamedLibraryElementNode" />
               <item name="spring-data-cassandra-2.0.0.RC3.jar" type="462c0819:PsiDirectoryNode" />
-              <item name="support" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="spring-boot-cassandra" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="Maven: org.springframework.data:spring-data-cassandra:2.0.0.RC3" type="70bed36:NamedLibraryElementNode" />
-              <item name="spring-data-cassandra-2.0.0.RC3.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="cassandra" type="462c0819:PsiDirectoryNode" />
+              <item name="core" type="462c0819:PsiDirectoryNode" />
               <item name="mapping" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="spring-boot-cassandra" type="b2602c69:ProjectViewProjectNode" />
+              <item name="spring-data-cassandra" type="b2602c69:ProjectViewProjectNode" />
               <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
               <item name="Maven: org.springframework.data:spring-data-cassandra:2.0.0.RC3" type="70bed36:NamedLibraryElementNode" />
               <item name="spring-data-cassandra-2.0.0.RC3.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="cassandra" type="462c0819:PsiDirectoryNode" />
+              <item name="repository" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="spring-data-cassandra" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: org.springframework.data:spring-data-cassandra:2.0.0.RC3" type="70bed36:NamedLibraryElementNode" />
+              <item name="spring-data-cassandra-2.0.0.RC3.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="cassandra" type="462c0819:PsiDirectoryNode" />
+              <item name="repository" type="462c0819:PsiDirectoryNode" />
+              <item name="config" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="spring-data-cassandra" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: org.springframework.data:spring-data-cassandra:2.0.0.RC3" type="70bed36:NamedLibraryElementNode" />
+              <item name="spring-data-cassandra-2.0.0.RC3.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="cassandra" type="462c0819:PsiDirectoryNode" />
+              <item name="repository" type="462c0819:PsiDirectoryNode" />
               <item name="query" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="spring-boot-cassandra" type="b2602c69:ProjectViewProjectNode" />
+              <item name="spring-data-cassandra" type="b2602c69:ProjectViewProjectNode" />
               <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
               <item name="Maven: org.springframework.data:spring-data-cassandra:2.0.0.RC3" type="70bed36:NamedLibraryElementNode" />
               <item name="spring-data-cassandra-2.0.0.RC3.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="cassandra" type="462c0819:PsiDirectoryNode" />
               <item name="repository" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="spring-boot-cassandra" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="Maven: org.springframework.data:spring-data-cassandra:2.0.0.RC3" type="70bed36:NamedLibraryElementNode" />
-              <item name="spring-data-cassandra-2.0.0.RC3.jar" type="462c0819:PsiDirectoryNode" />
               <item name="support" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="spring-boot-cassandra" type="b2602c69:ProjectViewProjectNode" />
+              <item name="spring-data-cassandra" type="b2602c69:ProjectViewProjectNode" />
               <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
               <item name="Maven: org.springframework.data:spring-data-commons:2.0.0.RC3" type="70bed36:NamedLibraryElementNode" />
             </path>
             <path>
-              <item name="spring-boot-cassandra" type="b2602c69:ProjectViewProjectNode" />
+              <item name="spring-data-cassandra" type="b2602c69:ProjectViewProjectNode" />
               <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
               <item name="Maven: org.springframework.data:spring-data-commons:2.0.0.RC3" type="70bed36:NamedLibraryElementNode" />
               <item name="spring-data-commons-2.0.0.RC3.jar" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="spring-boot-cassandra" type="b2602c69:ProjectViewProjectNode" />
+              <item name="spring-data-cassandra" type="b2602c69:ProjectViewProjectNode" />
               <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
               <item name="Maven: org.springframework.data:spring-data-commons:2.0.0.RC3" type="70bed36:NamedLibraryElementNode" />
               <item name="spring-data-commons-2.0.0.RC3.jar" type="462c0819:PsiDirectoryNode" />
-              <item name="context" type="462c0819:PsiDirectoryNode" />
+              <item name="data" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="spring-boot-cassandra" type="b2602c69:ProjectViewProjectNode" />
+              <item name="spring-data-cassandra" type="b2602c69:ProjectViewProjectNode" />
               <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
               <item name="Maven: org.springframework.data:spring-data-commons:2.0.0.RC3" type="70bed36:NamedLibraryElementNode" />
               <item name="spring-data-commons-2.0.0.RC3.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="data" type="462c0819:PsiDirectoryNode" />
               <item name="repository" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="spring-boot-cassandra" type="b2602c69:ProjectViewProjectNode" />
+              <item name="spring-data-cassandra" type="b2602c69:ProjectViewProjectNode" />
               <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
               <item name="Maven: org.springframework.data:spring-data-commons:2.0.0.RC3" type="70bed36:NamedLibraryElementNode" />
               <item name="spring-data-commons-2.0.0.RC3.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="data" type="462c0819:PsiDirectoryNode" />
+              <item name="repository" type="462c0819:PsiDirectoryNode" />
+              <item name="config" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="spring-data-cassandra" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: org.springframework.data:spring-data-commons:2.0.0.RC3" type="70bed36:NamedLibraryElementNode" />
+              <item name="spring-data-commons-2.0.0.RC3.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="data" type="462c0819:PsiDirectoryNode" />
+              <item name="repository" type="462c0819:PsiDirectoryNode" />
               <item name="core" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="spring-boot-cassandra" type="b2602c69:ProjectViewProjectNode" />
+              <item name="spring-data-cassandra" type="b2602c69:ProjectViewProjectNode" />
               <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
               <item name="Maven: org.springframework.data:spring-data-commons:2.0.0.RC3" type="70bed36:NamedLibraryElementNode" />
               <item name="spring-data-commons-2.0.0.RC3.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="data" type="462c0819:PsiDirectoryNode" />
+              <item name="repository" type="462c0819:PsiDirectoryNode" />
+              <item name="core" type="462c0819:PsiDirectoryNode" />
               <item name="support" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="spring-boot-cassandra" type="b2602c69:ProjectViewProjectNode" />
+              <item name="spring-data-cassandra" type="b2602c69:ProjectViewProjectNode" />
               <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
               <item name="Maven: org.springframework.data:spring-data-commons:2.0.0.RC3" type="70bed36:NamedLibraryElementNode" />
               <item name="spring-data-commons-2.0.0.RC3.jar" type="462c0819:PsiDirectoryNode" />
-              <item name="util" type="462c0819:PsiDirectoryNode" />
+              <item name="data" type="462c0819:PsiDirectoryNode" />
+              <item name="repository" type="462c0819:PsiDirectoryNode" />
+              <item name="support" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="spring-boot-cassandra" type="b2602c69:ProjectViewProjectNode" />
+              <item name="spring-data-cassandra" type="b2602c69:ProjectViewProjectNode" />
               <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="Maven: org.springframework:spring-context:5.0.0.RC4" type="70bed36:NamedLibraryElementNode" />
+              <item name="Maven: org.springframework:spring-beans:5.0.0.RC4" type="70bed36:NamedLibraryElementNode" />
             </path>
             <path>
-              <item name="spring-boot-cassandra" type="b2602c69:ProjectViewProjectNode" />
+              <item name="spring-data-cassandra" type="b2602c69:ProjectViewProjectNode" />
               <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="Maven: org.springframework:spring-context:5.0.0.RC4" type="70bed36:NamedLibraryElementNode" />
-              <item name="spring-context-5.0.0.RC4.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="Maven: org.springframework:spring-beans:5.0.0.RC4" type="70bed36:NamedLibraryElementNode" />
+              <item name="spring-beans-5.0.0.RC4.jar" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="spring-boot-cassandra" type="b2602c69:ProjectViewProjectNode" />
+              <item name="spring-data-cassandra" type="b2602c69:ProjectViewProjectNode" />
               <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="Maven: org.springframework:spring-context:5.0.0.RC4" type="70bed36:NamedLibraryElementNode" />
-              <item name="spring-context-5.0.0.RC4.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="Maven: org.springframework:spring-beans:5.0.0.RC4" type="70bed36:NamedLibraryElementNode" />
+              <item name="spring-beans-5.0.0.RC4.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="beans" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="spring-data-cassandra" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: org.springframework:spring-beans:5.0.0.RC4" type="70bed36:NamedLibraryElementNode" />
+              <item name="spring-beans-5.0.0.RC4.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="beans" type="462c0819:PsiDirectoryNode" />
+              <item name="factory" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="spring-data-cassandra" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: org.springframework:spring-beans:5.0.0.RC4" type="70bed36:NamedLibraryElementNode" />
+              <item name="spring-beans-5.0.0.RC4.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="beans" type="462c0819:PsiDirectoryNode" />
+              <item name="factory" type="462c0819:PsiDirectoryNode" />
               <item name="annotation" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="spring-data-cassandra" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: org.springframework:spring-context:5.0.0.RC4" type="70bed36:NamedLibraryElementNode" />
+            </path>
+            <path>
+              <item name="spring-data-cassandra" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: org.springframework:spring-context:5.0.0.RC4" type="70bed36:NamedLibraryElementNode" />
+              <item name="spring-context-5.0.0.RC4.jar" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="spring-data-cassandra" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: org.springframework:spring-context:5.0.0.RC4" type="70bed36:NamedLibraryElementNode" />
+              <item name="spring-context-5.0.0.RC4.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="springframework" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="spring-data-cassandra" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: org.springframework:spring-context:5.0.0.RC4" type="70bed36:NamedLibraryElementNode" />
+              <item name="spring-context-5.0.0.RC4.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="springframework" type="462c0819:PsiDirectoryNode" />
+              <item name="stereotype" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="AndroidView" />
       <pane id="Scratches" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -524,7 +761,7 @@
       <option name="PROGRAM_PARAMETERS" value="" />
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
-      <option name="ALTERNATIVE_JRE_PATH" value="9" />
+      <option name="ALTERNATIVE_JRE_PATH" value="1.8" />
       <option name="ENABLE_SWING_INSPECTOR" value="false" />
       <option name="ENV_VARIABLES" />
       <option name="PASS_PARENT_ENVS" value="true" />
@@ -634,45 +871,49 @@
       <workItem from="1509473754900" duration="1366000" />
       <workItem from="1509519775262" duration="1388000" />
       <workItem from="1509562764980" duration="3079000" />
+      <workItem from="1509991607279" duration="1828000" />
+      <workItem from="1510081732570" duration="3830000" />
+      <workItem from="1510163353276" duration="6426000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="7035000" />
+    <option name="totallyTimeSpent" value="19119000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3378076" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="true" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1283566" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.46420583" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.12783661" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.46420583" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32941177" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26100966" sideWeight="0.5" order="6" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23713647" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.34266263" sideWeight="0.5" order="6" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24962178" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.43288592" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3223684" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24973147" sideWeight="0.5" order="8" side_tool="false" content_ui="combo" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.121710524" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23684211" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -692,13 +933,13 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/lankydan/cassandra/keyspace/a/KeyspaceACassandraConfig.java</url>
-          <line>23</line>
+          <line>22</line>
           <properties />
           <option name="timeStamp" value="6" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/lankydan/cassandra/keyspace/a/KeyspaceAPersonRepositoryImpl.java</url>
-          <line>22</line>
+          <line>21</line>
           <properties />
           <option name="timeStamp" value="7" />
         </line-breakpoint>
@@ -709,8 +950,8 @@
           <option name="timeStamp" value="8" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/lankydan/cassandra/AbstractKeyspaceCassandraRepository.java</url>
-          <line>48</line>
+          <url>file://$PROJECT_DIR$/src/main/java/com/lankydan/cassandra/SimpleCassandraKeyspaceRepository.java</url>
+          <line>61</line>
           <properties />
           <option name="timeStamp" value="9" />
         </line-breakpoint>
@@ -720,177 +961,373 @@
           <properties />
           <option name="timeStamp" value="12" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/lankydan/Application.java</url>
+          <line>38</line>
+          <properties />
+          <option name="timeStamp" value="13" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/lankydan/cassandra/keyspace/b/KeyspaceBCassandraConfig.java</url>
+          <line>36</line>
+          <properties />
+          <option name="timeStamp" value="14" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/lankydan/cassandra/keyspace/a/KeyspaceACassandraConfig.java</url>
+          <line>31</line>
+          <properties />
+          <option name="timeStamp" value="15" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="13" />
+      <option name="time" value="16" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$MAVEN_REPOSITORY$/com/datastax/cassandra/cassandra-driver-core/3.3.0/cassandra-driver-core-3.3.0-sources.jar!/com/datastax/driver/core/querybuilder/QueryBuilder.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-commons/2.0.0.RC3/spring-data-commons-2.0.0.RC3-sources.jar!/org/springframework/data/repository/support/DomainClassConverter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="298" column="25" lean-forward="false" selection-start-line="298" selection-start-column="25" selection-end-line="298" selection-end-column="25" />
+        <state relative-caret-position="3280">
+          <caret line="236" column="34" lean-forward="false" selection-start-line="236" selection-start-column="34" selection-end-line="236" selection-end-column="34" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lankydan/cassandra/PersonRepository.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-commons/2.0.0.RC3/spring-data-commons-2.0.0.RC3-sources.jar!/org/springframework/data/repository/support/Repositories.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="10" column="17" lean-forward="false" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
+        <state relative-caret-position="208">
+          <caret line="46" column="17" lean-forward="false" selection-start-line="46" selection-start-column="17" selection-end-line="46" selection-end-column="17" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lankydan/cassandra/PersonKey.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-cassandra/2.0.0.RC3/spring-data-cassandra-2.0.0.RC3-sources.jar!/org/springframework/data/cassandra/core/CassandraAdminTemplate.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="24" column="0" lean-forward="false" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+        <state relative-caret-position="279">
+          <caret line="131" column="97" lean-forward="false" selection-start-line="131" selection-start-column="97" selection-end-line="131" selection-end-column="97" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lankydan/cassandra/Person.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-cassandra/2.0.0.RC3/spring-data-cassandra-2.0.0.RC3-sources.jar!/org/springframework/data/cassandra/core/CassandraTemplate.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="6" column="29" lean-forward="false" selection-start-line="6" selection-start-column="29" selection-end-line="6" selection-end-column="29" />
+        <state relative-caret-position="194">
+          <caret line="167" column="20" lean-forward="false" selection-start-line="167" selection-start-column="20" selection-end-line="167" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/datastax/cassandra/cassandra-driver-core/3.3.0/cassandra-driver-core-3.3.0-sources.jar!/com/datastax/driver/core/ResultSet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="194">
+          <caret line="36" column="17" lean-forward="false" selection-start-line="36" selection-start-column="17" selection-end-line="36" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-cassandra/2.0.0.RC3/spring-data-cassandra-2.0.0.RC3-sources.jar!/org/springframework/data/cassandra/core/cql/CqlTemplate.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="369">
+          <caret line="170" column="48" lean-forward="false" selection-start-line="170" selection-start-column="48" selection-end-line="170" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/datastax/cassandra/cassandra-driver-core/3.3.0/cassandra-driver-core-3.3.0-sources.jar!/com/datastax/driver/core/AbstractSession.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="226">
+          <caret line="67" column="22" lean-forward="false" selection-start-line="67" selection-start-column="22" selection-end-line="67" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/datastax/cassandra/cassandra-driver-core/3.3.0/cassandra-driver-core-3.3.0-sources.jar!/com/datastax/driver/core/SessionManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="97">
+          <caret line="151" column="57" lean-forward="false" selection-start-line="151" selection-start-column="57" selection-end-line="151" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/datastax/cassandra/cassandra-driver-core/3.3.0/cassandra-driver-core-3.3.0-sources.jar!/com/datastax/driver/core/Session.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="186">
+          <caret line="244" column="20" lean-forward="false" selection-start-line="244" selection-start-column="20" selection-end-line="244" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-cassandra/2.0.0.RC3/spring-data-cassandra-2.0.0.RC3-sources.jar!/org/springframework/data/cassandra/repository/CassandraRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="16">
+          <caret line="15" column="17" lean-forward="false" selection-start-line="15" selection-start-column="17" selection-end-line="15" selection-end-column="17" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/lankydan/cassandra/CassandraKeyspaceTemplate.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="39" column="238" lean-forward="false" selection-start-line="39" selection-start-column="238" selection-end-line="39" selection-end-column="238" />
+        <state relative-caret-position="288">
+          <caret line="48" column="22" lean-forward="false" selection-start-line="48" selection-start-column="22" selection-end-line="48" selection-end-column="22" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-cassandra/2.0.0.RC3/spring-data-cassandra-2.0.0.RC3-sources.jar!/org/springframework/data/cassandra/core/mapping/CassandraMappingContext.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1190">
-          <caret line="70" column="23" lean-forward="false" selection-start-line="70" selection-start-column="23" selection-end-line="70" selection-end-column="23" />
+        <state relative-caret-position="-4336">
+          <caret line="18" column="66" lean-forward="false" selection-start-line="18" selection-start-column="58" selection-end-line="18" selection-end-column="66" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-cassandra/2.0.0.RC3/spring-data-cassandra-2.0.0.RC3-sources.jar!/org/springframework/data/cassandra/repository/support/CassandraRepositoryFactoryBean.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="35" column="26" lean-forward="false" selection-start-line="35" selection-start-column="26" selection-end-line="35" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-commons/2.0.0.RC3/spring-data-commons-2.0.0.RC3-sources.jar!/org/springframework/data/repository/core/support/RepositoryFactoryBeanSupport.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="121">
+          <caret line="198" column="53" lean-forward="false" selection-start-line="198" selection-start-column="53" selection-end-line="198" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-commons/2.0.0.RC3/spring-data-commons-2.0.0.RC3-sources.jar!/org/springframework/data/repository/core/RepositoryInformation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="26" column="17" lean-forward="false" selection-start-line="26" selection-start-column="17" selection-end-line="26" selection-end-column="17" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-cassandra/2.0.0.RC3/spring-data-cassandra-2.0.0.RC3.jar!/org/springframework/data/cassandra/config/AbstractCassandraConfiguration.class">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-cassandra/2.0.0.RC3/spring-data-cassandra-2.0.0.RC3-sources.jar!/org/springframework/data/cassandra/repository/support/CassandraRepositoryFactory.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#4251#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/boot/spring-boot-autoconfigure/2.0.0.M4/spring-boot-autoconfigure-2.0.0.M4-sources.jar!/org/springframework/boot/autoconfigure/SpringBootApplication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-33">
-          <caret line="54" column="18" lean-forward="false" selection-start-line="54" selection-start-column="18" selection-end-line="54" selection-end-column="18" />
+        <state relative-caret-position="720">
+          <caret line="84" column="24" lean-forward="false" selection-start-line="84" selection-start-column="24" selection-end-line="84" selection-end-column="24" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-commons/2.0.0.RC3/spring-data-commons-2.0.0.RC3-sources.jar!/org/springframework/data/repository/core/support/RepositoryFactorySupport.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="32" lean-forward="false" selection-start-line="5" selection-start-column="32" selection-end-line="5" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-context/5.0.0.RC4/spring-context-5.0.0.RC4-sources.jar!/org/springframework/context/annotation/Configuration.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="404" column="18" lean-forward="false" selection-start-line="404" selection-start-column="18" selection-end-line="404" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/spring-boot-cassandra.iml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="14" lean-forward="true" selection-start-line="10" selection-start-column="14" selection-end-line="10" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lankydan/Application.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="17" column="57" lean-forward="false" selection-start-line="17" selection-start-column="57" selection-end-line="17" selection-end-column="57" />
+        <state relative-caret-position="3568">
+          <caret line="291" column="64" lean-forward="false" selection-start-line="291" selection-start-column="64" selection-end-line="291" selection-end-column="64" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/lankydan/cassandra/CassandraConfig.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="544">
-          <caret line="40" column="11" lean-forward="true" selection-start-line="40" selection-start-column="11" selection-end-line="40" selection-end-column="11" />
+        <state relative-caret-position="224">
+          <caret line="18" column="38" lean-forward="false" selection-start-line="18" selection-start-column="38" selection-end-line="18" selection-end-column="38" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-cassandra/2.0.0.RC3/spring-data-cassandra-2.0.0.RC3.jar!/org/springframework/data/cassandra/core/CassandraAdminOperations.class">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/boot/spring-boot/2.0.0.M4/spring-boot-2.0.0.M4-sources.jar!/org/springframework/boot/SpringApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="11408">
+          <caret line="790" column="0" lean-forward="false" selection-start-line="790" selection-start-column="0" selection-end-line="790" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-cassandra/2.0.0.RC3/spring-data-cassandra-2.0.0.RC3-sources.jar!/org/springframework/data/cassandra/repository/support/SimpleCassandraRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="576">
+          <caret line="72" column="5" lean-forward="false" selection-start-line="72" selection-start-column="5" selection-end-line="72" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-commons/2.0.0.RC3/spring-data-commons-2.0.0.RC3-sources.jar!/org/springframework/data/repository/Repository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="33" column="17" lean-forward="false" selection-start-line="33" selection-start-column="17" selection-end-line="33" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-context/5.0.0.RC4/spring-context-5.0.0.RC4-sources.jar!/org/springframework/stereotype/Repository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="656">
+          <caret line="59" column="18" lean-forward="false" selection-start-line="59" selection-start-column="18" selection-end-line="59" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-cassandra/2.0.0.RC3/spring-data-cassandra-2.0.0.RC3.jar!/org/springframework/data/cassandra/repository/config/EnableCassandraRepositories.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-cassandra/2.0.0.RC3/spring-data-cassandra-2.0.0.RC3-sources.jar!/org/springframework/data/cassandra/repository/config/EnableCassandraRepositories.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="339">
+          <caret line="105" column="5" lean-forward="false" selection-start-line="105" selection-start-column="5" selection-end-line="105" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-cassandra/2.0.0.RC3/spring-data-cassandra-2.0.0.RC3-sources.jar!/org/springframework/data/cassandra/repository/query/CassandraEntityMetadata.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="34" column="16" lean-forward="false" selection-start-line="34" selection-start-column="16" selection-end-line="34" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/datastax/cassandra/cassandra-driver-core/3.3.0/cassandra-driver-core-3.3.0-sources.jar!/com/datastax/driver/core/querybuilder/Select.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="186">
+          <caret line="458" column="22" lean-forward="false" selection-start-line="458" selection-start-column="22" selection-end-line="458" selection-end-column="22" />
           <folding>
-            <element signature="e#0#740#0" expanded="true" />
+            <element signature="e#16185#16186#0" expanded="false" />
+            <element signature="e#16233#16234#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-cassandra/2.0.0.RC3/spring-data-cassandra-2.0.0.RC3-sources.jar!/org/springframework/data/cassandra/core/CassandraAdminTemplate.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-cassandra/2.0.0.RC3/spring-data-cassandra-2.0.0.RC3-sources.jar!/org/springframework/data/cassandra/core/cql/CqlIdentifier.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="46" column="5" lean-forward="true" selection-start-line="46" selection-start-column="5" selection-end-line="46" selection-end-column="5" />
+        <state relative-caret-position="194">
+          <caret line="188" column="16" lean-forward="false" selection-start-line="188" selection-start-column="16" selection-end-line="188" selection-end-column="16" />
+          <folding>
+            <element signature="e#6173#6174#0" expanded="false" />
+            <element signature="e#6197#6198#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-cassandra/2.0.0.RC3/spring-data-cassandra-2.0.0.RC3-sources.jar!/org/springframework/data/cassandra/core/CassandraOperations.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="194">
+          <caret line="131" column="14" lean-forward="false" selection-start-line="131" selection-start-column="14" selection-end-line="131" selection-end-column="14" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/boot/spring-boot-autoconfigure/2.0.0.M4/spring-boot-autoconfigure-2.0.0.M4-sources.jar!/org/springframework/boot/autoconfigure/data/cassandra/CassandraDataAutoConfiguration.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/com/datastax/cassandra/cassandra-driver-core/3.3.0/cassandra-driver-core-3.3.0-sources.jar!/com/datastax/driver/core/querybuilder/QueryBuilder.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="348">
-          <caret line="127" column="26" lean-forward="false" selection-start-line="127" selection-start-column="9" selection-end-line="127" selection-end-column="26" />
+        <state relative-caret-position="186">
+          <caret line="298" column="25" lean-forward="false" selection-start-line="298" selection-start-column="25" selection-end-line="298" selection-end-column="25" />
+          <folding>
+            <element signature="e#10648#10649#0" expanded="false" />
+            <element signature="e#10712#10713#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-commons/2.0.0.RC3/spring-data-commons-2.0.0.RC3-sources.jar!/org/springframework/data/mapping/context/MappingContext.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="194">
+          <caret line="140" column="12" lean-forward="false" selection-start-line="140" selection-start-column="12" selection-end-line="140" selection-end-column="12" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lankydan/cassandra/AbstractKeyspaceCassandraRepository.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-cassandra/2.0.0.RC3/spring-data-cassandra-2.0.0.RC3-sources.jar!/org/springframework/data/cassandra/core/convert/MappingCassandraConverter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="303">
-          <caret line="49" column="47" lean-forward="true" selection-start-line="49" selection-start-column="47" selection-end-line="49" selection-end-column="47" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-cassandra/2.0.0.RC3/spring-data-cassandra-2.0.0.RC3-sources.jar!/org/springframework/data/cassandra/core/CassandraTemplate.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="77" column="24" lean-forward="false" selection-start-line="77" selection-start-column="24" selection-end-line="77" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-cassandra/2.0.0.RC3/spring-data-cassandra-2.0.0.RC3-sources.jar!/org/springframework/data/cassandra/core/cql/CqlTemplate.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="227">
-          <caret line="79" column="13" lean-forward="false" selection-start-line="79" selection-start-column="13" selection-end-line="79" selection-end-column="13" />
+        <state relative-caret-position="98">
+          <caret line="444" column="39" lean-forward="false" selection-start-line="444" selection-start-column="39" selection-end-line="444" selection-end-column="39" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-cassandra/2.0.0.RC3/spring-data-cassandra-2.0.0.RC3-sources.jar!/org/springframework/data/cassandra/core/cql/CqlOperations.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="39" column="0" lean-forward="false" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
+        <state relative-caret-position="-374">
+          <caret line="257" column="28" lean-forward="false" selection-start-line="257" selection-start-column="28" selection-end-line="257" selection-end-column="28" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-cassandra/2.0.0.RC3/spring-data-cassandra-2.0.0.RC3.jar!/org/springframework/data/cassandra/repository/support/SimpleCassandraRepository.class">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lankydan/cassandra/keyspace/a/KeyspaceAPersonRepository.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="386">
-          <caret line="34" column="77" lean-forward="false" selection-start-line="34" selection-start-column="69" selection-end-line="34" selection-end-column="77" />
+        <state relative-caret-position="80">
+          <caret line="10" column="62" lean-forward="false" selection-start-line="10" selection-start-column="62" selection-end-line="10" selection-end-column="62" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-beans/5.0.0.RC4/spring-beans-5.0.0.RC4.jar!/org/springframework/beans/factory/annotation/Autowired.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#5546#0" expanded="true" />
+            <element signature="e#0#604#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lankydan/cassandra/SimpleCassandraKeyspaceRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1264">
+          <caret line="99" column="18" lean-forward="true" selection-start-line="99" selection-start-column="18" selection-end-line="99" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-cassandra/2.0.0.RC3/spring-data-cassandra-2.0.0.RC3-sources.jar!/org/springframework/data/cassandra/repository/query/CassandraEntityInformation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="25" column="17" lean-forward="false" selection-start-line="25" selection-start-column="17" selection-end-line="25" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lankydan/cassandra/keyspace/b/KeyspaceBPersonRepositoryImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="368">
+          <caret line="32" column="3" lean-forward="false" selection-start-line="32" selection-start-column="3" selection-end-line="32" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-cassandra/2.0.0.RC3/spring-data-cassandra-2.0.0.RC3-sources.jar!/org/springframework/data/cassandra/repository/support/MappingCassandraEntityInformation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="186">
+          <caret line="35" column="13" lean-forward="false" selection-start-line="35" selection-start-column="13" selection-end-line="35" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lankydan/cassandra/keyspace/b/KeyspaceBPersonRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="80">
+          <caret line="10" column="107" lean-forward="false" selection-start-line="10" selection-start-column="107" selection-end-line="10" selection-end-column="107" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lankydan/cassandra/PersonRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="64">
+          <caret line="9" column="17" lean-forward="false" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lankydan/cassandra/keyspace/a/KeyspaceAPersonRepositoryImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="8">
+          <caret line="17" column="2" lean-forward="true" selection-start-line="17" selection-start-column="2" selection-end-line="26" selection-end-column="3" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lankydan/cassandra/keyspace/a/KeyspaceACassandraConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="31" column="29" lean-forward="true" selection-start-line="31" selection-start-column="29" selection-end-line="31" selection-end-column="29" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lankydan/cassandra/PersonRepositoryImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="308">
+          <caret line="27" column="11" lean-forward="true" selection-start-line="27" selection-start-column="11" selection-end-line="27" selection-end-column="11" />
+          <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
@@ -898,246 +1335,67 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/lankydan/cassandra/keyspace/b/KeyspaceBCassandraConfig.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="15" column="29" lean-forward="false" selection-start-line="15" selection-start-column="29" selection-end-line="15" selection-end-column="29" />
+        <state relative-caret-position="302">
+          <caret line="36" column="0" lean-forward="false" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lankydan/cassandra/keyspace/a/KeyspaceAPersonRepositoryImpl.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-beans/5.0.0.RC4/spring-beans-5.0.0.RC4-sources.jar!/org/springframework/beans/factory/annotation/Lookup.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="14" column="13" lean-forward="true" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+        <state relative-caret-position="611">
+          <caret line="58" column="15" lean-forward="true" selection-start-line="58" selection-start-column="15" selection-end-line="58" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-beans/5.0.0.RC4/spring-beans-5.0.0.RC4-sources.jar!/org/springframework/beans/factory/annotation/Qualifier.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="188">
+          <caret line="39" column="24" lean-forward="false" selection-start-line="39" selection-start-column="24" selection-end-line="39" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-beans/5.0.0.RC4/spring-beans-5.0.0.RC4-sources.jar!/org/springframework/beans/factory/annotation/Autowired.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="49">
+          <caret line="63" column="8" lean-forward="false" selection-start-line="63" selection-start-column="8" selection-end-line="63" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="48">
+          <caret line="3" column="37" lean-forward="false" selection-start-line="3" selection-start-column="37" selection-end-line="3" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lankydan/cassandra/PersonKey.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="80">
+          <caret line="14" column="13" lean-forward="false" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/datastax/cassandra/cassandra-driver-core/3.3.0/cassandra-driver-core-3.3.0-sources.jar!/com/datastax/driver/core/utils/UUIDs.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="332">
+          <caret line="154" column="19" lean-forward="true" selection-start-line="154" selection-start-column="19" selection-end-line="154" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lankydan/Application.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="284">
+          <caret line="56" column="66" lean-forward="true" selection-start-line="56" selection-start-column="66" selection-end-line="56" selection-end-column="66" />
           <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-cassandra/2.0.0.RC3/spring-data-cassandra-2.0.0.RC3-sources.jar!/org/springframework/data/cassandra/repository/support/CassandraRepositoryFactoryBean.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="227">
-          <caret line="53" column="15" lean-forward="false" selection-start-line="53" selection-start-column="15" selection-end-line="53" selection-end-column="15" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-commons/2.0.0.RC3/spring-data-commons-2.0.0.RC3-sources.jar!/org/springframework/data/util/ClassTypeInformation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1530">
-          <caret line="42" column="13" lean-forward="false" selection-start-line="42" selection-start-column="13" selection-end-line="42" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-commons/2.0.0.RC3/spring-data-commons-2.0.0.RC3-sources.jar!/org/springframework/data/util/TypeInformation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="30" column="17" lean-forward="false" selection-start-line="30" selection-start-column="17" selection-end-line="30" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-cassandra/2.0.0.RC3/spring-data-cassandra-2.0.0.RC3-sources.jar!/org/springframework/data/cassandra/core/mapping/BasicCassandraPersistentEntity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="48" column="13" lean-forward="false" selection-start-line="48" selection-start-column="13" selection-end-line="48" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-cassandra/2.0.0.RC3/spring-data-cassandra-2.0.0.RC3-sources.jar!/org/springframework/data/cassandra/core/mapping/CassandraUserTypePersistentEntity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="33" column="13" lean-forward="false" selection-start-line="33" selection-start-column="13" selection-end-line="33" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-cassandra/2.0.0.RC3/spring-data-cassandra-2.0.0.RC3-sources.jar!/org/springframework/data/cassandra/core/mapping/CassandraPersistentEntity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="30" column="17" lean-forward="false" selection-start-line="30" selection-start-column="17" selection-end-line="30" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-commons/2.0.0.RC3/spring-data-commons-2.0.0.RC3-sources.jar!/org/springframework/data/mapping/context/AbstractMappingContext.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="227">
-          <caret line="84" column="22" lean-forward="false" selection-start-line="84" selection-start-column="22" selection-end-line="84" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-cassandra/2.0.0.RC3/spring-data-cassandra-2.0.0.RC3-sources.jar!/org/springframework/data/cassandra/core/mapping/CassandraMappingContext.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="244">
-          <caret line="71" column="24" lean-forward="false" selection-start-line="71" selection-start-column="24" selection-end-line="71" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-cassandra/2.0.0.RC3/spring-data-cassandra-2.0.0.RC3-sources.jar!/org/springframework/data/cassandra/config/AbstractCassandraConfiguration.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="461">
-          <caret line="164" column="59" lean-forward="true" selection-start-line="164" selection-start-column="59" selection-end-line="164" selection-end-column="59" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-commons/2.0.0.RC3/spring-data-commons-2.0.0.RC3-sources.jar!/org/springframework/data/repository/NoRepositoryBean.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="37" column="18" lean-forward="false" selection-start-line="37" selection-start-column="18" selection-end-line="37" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-cassandra/2.0.0.RC3/spring-data-cassandra-2.0.0.RC3-sources.jar!/org/springframework/data/cassandra/repository/CassandraRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="38" column="10" lean-forward="false" selection-start-line="38" selection-start-column="10" selection-end-line="38" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lankydan/cassandra/keyspace/b/KeyspaceBPersonRepositoryImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="13" column="2" lean-forward="false" selection-start-line="13" selection-start-column="2" selection-end-line="13" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lankydan/cassandra/keyspace/b/KeyspaceBPersonRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lankydan/cassandra/keyspace/a/KeyspaceAPersonRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="17" lean-forward="false" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-commons/2.0.0.RC3/spring-data-commons-2.0.0.RC3-sources.jar!/org/springframework/data/repository/core/EntityInformation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="26" column="17" lean-forward="false" selection-start-line="26" selection-start-column="17" selection-end-line="26" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-commons/2.0.0.RC3/spring-data-commons-2.0.0.RC3-sources.jar!/org/springframework/data/repository/core/support/ReactiveRepositoryInformation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="31" column="13" lean-forward="false" selection-start-line="31" selection-start-column="13" selection-end-line="31" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-commons/2.0.0.RC3/spring-data-commons-2.0.0.RC3-sources.jar!/org/springframework/data/repository/core/support/DefaultRepositoryInformation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="217">
-          <caret line="45" column="6" lean-forward="false" selection-start-line="45" selection-start-column="6" selection-end-line="45" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-commons/2.0.0.RC3/spring-data-commons-2.0.0.RC3-sources.jar!/org/springframework/data/repository/core/RepositoryInformation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="26" column="0" lean-forward="false" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-cassandra/2.0.0.RC3/spring-data-cassandra-2.0.0.RC3-sources.jar!/org/springframework/data/cassandra/repository/cdi/CassandraRepositoryBean.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="69" column="45" lean-forward="false" selection-start-line="69" selection-start-column="45" selection-end-line="69" selection-end-column="45" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-cassandra/2.0.0.RC3/spring-data-cassandra-2.0.0.RC3-sources.jar!/org/springframework/data/cassandra/repository/support/MappingCassandraEntityInformation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="47" column="31" lean-forward="false" selection-start-line="47" selection-start-column="31" selection-end-line="47" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-cassandra/2.0.0.RC3/spring-data-cassandra-2.0.0.RC3-sources.jar!/org/springframework/data/cassandra/repository/query/CassandraEntityInformation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="25" column="17" lean-forward="false" selection-start-line="25" selection-start-column="17" selection-end-line="25" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-commons/2.0.0.RC3/spring-data-commons-2.0.0.RC3-sources.jar!/org/springframework/data/repository/support/DomainClassConverter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="421">
-          <caret line="238" column="68" lean-forward="false" selection-start-line="238" selection-start-column="68" selection-end-line="238" selection-end-column="68" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-commons/2.0.0.RC3/spring-data-commons-2.0.0.RC3-sources.jar!/org/springframework/data/repository/support/Repositories.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="217">
-          <caret line="178" column="78" lean-forward="false" selection-start-line="178" selection-start-column="78" selection-end-line="178" selection-end-column="78" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-commons/2.0.0.RC3/spring-data-commons-2.0.0.RC3-sources.jar!/org/springframework/data/repository/core/support/RepositoryFactoryBeanSupport.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="198" column="41" lean-forward="true" selection-start-line="198" selection-start-column="41" selection-end-line="198" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-commons/2.0.0.RC3/spring-data-commons-2.0.0.RC3-sources.jar!/org/springframework/data/repository/core/support/RepositoryFactorySupport.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="194">
-          <caret line="391" column="71" lean-forward="false" selection-start-line="391" selection-start-column="54" selection-end-line="391" selection-end-column="71" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-cassandra/2.0.0.RC3/spring-data-cassandra-2.0.0.RC3-sources.jar!/org/springframework/data/cassandra/repository/support/CassandraRepositoryFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="96" column="59" lean-forward="true" selection-start-line="96" selection-start-column="59" selection-end-line="96" selection-end-column="59" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-cassandra/2.0.0.RC3/spring-data-cassandra-2.0.0.RC3-sources.jar!/org/springframework/data/cassandra/repository/support/SimpleCassandraRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="367">
-          <caret line="61" column="56" lean-forward="false" selection-start-line="61" selection-start-column="56" selection-end-line="61" selection-end-column="56" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lankydan/cassandra/keyspace/a/KeyspaceACassandraConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="663">
-          <caret line="38" column="7" lean-forward="true" selection-start-line="38" selection-start-column="7" selection-end-line="41" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#976#977#0" expanded="true" />
+            <element signature="e#1026#1027#0" expanded="true" />
           </folding>
         </state>
       </provider>

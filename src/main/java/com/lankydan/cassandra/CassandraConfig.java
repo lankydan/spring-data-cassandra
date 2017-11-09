@@ -16,7 +16,7 @@ public class CassandraConfig extends AbstractCassandraConfiguration {
   @Value("${cassandra.port}")
   private int port;
 
-  @Value("${cassandra.keyspace}")
+  @Value("${cassandra.keyspace.default}")
   private String keySpace;
 
   @Value("${cassandra.basepackages}")
