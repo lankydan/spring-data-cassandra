@@ -26,13 +26,24 @@ public class PersonRepositoryImpl extends SimpleCassandraKeyspaceRepository<Pers
   }
 
   @Override
-  public List<Person> findByKeyFirstName(final String firstName) {
-    return cassandraTemplate.select(select().from(keyspace, entityInformation.getTableName().toCql()).where(eq("first_name", firstName)), entityInformation.getJavaType());
+  public List<Person> findByKeyFirstName(String firstName) {
+    return null;
+  }
+
+  @Override
+  public List<Person> findByKeyFirstNameQueryBuilder(final String firstName) {
+    return cassandraTemplate.select(select().from(keyspace, entityInformation.getTableName().toCql()).where(eq("first_name", firstName)), Person.class);
+  }
+
+  // I think I actually prefer the look of the CQL query compared to the query builder to be honest, looks more familiar.
+  @Override
+  public List<Person> findByKeyFirstNameCql(final String firstName) {
+    return cassandraTemplate.getCqlOperations().queryForList("SELECT * FROM :keyspace.people_by_first_name WHERE first_name = :firstName", Person.class, keyspace, firstName);
   }
 
   @Override
   public List<Person> findByKeyFirstNameAndKeyDateOfBirthGreaterThan(
           String firstName, LocalDateTime dateOfBirth) {
-    return cassandraTemplate.getCqlOperations().queryForList("SELECT * FROM :keyspace.people_by_first_name WHERE first_name = :firstName AND date_of_birth >= :dateOfBirth", Person.class, firstName, dateOfBirth);
+    return cassandraTemplate.getCqlOperations().queryForList("SELECT * FROM :keyspace.people_by_first_name WHERE first_name = :firstName AND date_of_birth >= :dateOfBirth", Person.class, keyspace, firstName, dateOfBirth);
   }
 }

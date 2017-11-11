@@ -38,7 +38,8 @@ public class Application implements CommandLineRunner {
     final Person p = new Person(key, "Doe", 1000);
     keyspaceAPersonRepository.insert(p);
     System.out.println("keyspace a -------------- \nfind by first name");
-    keyspaceAPersonRepository.findByKeyFirstName("John").forEach(System.out::println);
+//    keyspaceAPersonRepository.findByKeyFirstName("John").forEach(System.out::println);
+    keyspaceAPersonRepository.findByKeyFirstNameQueryBuilder("John").forEach(System.out::println);
     System.out.println("find all");
     keyspaceAPersonRepository.findAll().forEach(System.out::println);
     System.out.println("exists");

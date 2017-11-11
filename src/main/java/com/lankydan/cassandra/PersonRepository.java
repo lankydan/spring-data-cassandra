@@ -12,6 +12,11 @@ public interface PersonRepository extends CassandraRepository<Person, PersonKey>
 
   List<Person> findByKeyFirstName(final String firstName);
 
+  List<Person> findByKeyFirstNameQueryBuilder(String firstName);
+
+  // I think I actually prefer the look of the CQL query compared to the query builder to be honest, looks more familiar.
+  List<Person> findByKeyFirstNameCql(String firstName);
+
   List<Person> findByKeyFirstNameAndKeyDateOfBirthGreaterThan(
       final String firstName, final LocalDateTime dateOfBirth);
 }
