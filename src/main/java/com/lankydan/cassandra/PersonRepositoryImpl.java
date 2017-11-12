@@ -37,7 +37,6 @@ public class PersonRepositoryImpl extends SimpleCassandraKeyspaceRepository<Pers
 
   @Override
   public List<Person> findByFirstNameQueryBuilder2(final String firstName) {
-    // is just the underlying implementation of CqlOperations.select
     return cassandraTemplate
         .getCqlOperations()
         .query(
@@ -47,11 +46,8 @@ public class PersonRepositoryImpl extends SimpleCassandraKeyspaceRepository<Pers
             (row, rowNum) -> cassandraTemplate.getConverter().read(Person.class, row));
   }
 
-  // is a prepared query -> gets turned into a statement so doesnt complain about not being a
-  // prepared query
   @Override
   public List<Person> findByFirstNameCql(final String firstName) {
-    // not to keen on the string contact
     return cassandraTemplate.select(
         "SELECT * FROM "
             + keyspace
@@ -61,7 +57,6 @@ public class PersonRepositoryImpl extends SimpleCassandraKeyspaceRepository<Pers
         Person.class);
   }
 
-  // not a prepared query
   @Override
   public List<Person> findByFirstNameCql2(final String firstName) {
     return cassandraTemplate

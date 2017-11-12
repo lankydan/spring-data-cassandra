@@ -18,19 +18,6 @@ import java.util.*;
 
 import static com.datastax.driver.core.querybuilder.QueryBuilder.in;
 
-// should this class implement CassandraRepository? I dont want o infer any methods as this will use
-// the original cassandraTemplate + session
-
-// should some of this code be moved to an SimpleCassandraKeyspaceRepository? Does it need to be
-// abstract? If I move it to a cassandra template then really it is just a wrapper around it? If I
-// do this it would not be abstract and would need to fully replace the normal CassandraTemplate ->
-// requires a lot of methods to be written, but most could be inherited. This could then be used by
-// the SimpleCassandraKeyspaceRepository without exposing a lot of the logic that is normally
-// found within the CassandraTemlate
-
-/*
-Can a CassandraRepository infer a implementation by having a method called keyspaceAFindAllById()??
-*/
 public class SimpleCassandraKeyspaceRepository<T, ID> implements CassandraRepository<T, ID> {
 
   private final CassandraOperations cassandraTemplate;
@@ -58,7 +45,7 @@ public class SimpleCassandraKeyspaceRepository<T, ID> implements CassandraReposi
     final Map<String, Object> toInsert = new LinkedHashMap<>();
     getConverter().write(entity, toInsert, persistentEntity);
     final Insert insert =
-            QueryBuilder.insertInto(keyspace, persistentEntity.getTableName().toCql());
+        QueryBuilder.insertInto(keyspace, persistentEntity.getTableName().toCql());
     toInsert.forEach(insert::value);
     return insert;
   }
