@@ -44,6 +44,6 @@ public class CassandraConfig extends AbstractCassandraConfiguration {
 
   @Override
   public String[] getEntityBasePackages() {
-    return new String[]{basePackages};
+    return new String[] {basePackages};
   }
 }

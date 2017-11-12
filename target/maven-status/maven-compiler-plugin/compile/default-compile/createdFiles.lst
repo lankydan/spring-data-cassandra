@@ -3,7 +3,6 @@ com\lankydan\cassandra\CassandraConfig.class
 com\lankydan\Application.class
 com\lankydan\cassandra\keyspace\b\KeyspaceBPersonRepository.class
 com\lankydan\cassandra\PersonRepositoryImpl.class
-com\lankydan\cassandra\CassandraKeyspaceTemplate.class
 com\lankydan\cassandra\keyspace\a\KeyspaceAPersonRepositoryImpl.class
 com\lankydan\cassandra\Person.class
 com\lankydan\cassandra\keyspace\b\KeyspaceBPersonRepositoryImpl.class

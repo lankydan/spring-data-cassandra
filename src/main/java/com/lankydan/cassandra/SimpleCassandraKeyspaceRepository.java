@@ -8,7 +8,6 @@ import com.datastax.driver.core.querybuilder.Select;
 import org.springframework.data.cassandra.core.CassandraOperations;
 import org.springframework.data.cassandra.core.convert.CassandraConverter;
 import org.springframework.data.cassandra.core.cql.CqlOperations;
-import org.springframework.data.cassandra.core.mapping.CassandraMappingContext;
 import org.springframework.data.cassandra.core.mapping.CassandraPersistentEntity;
 import org.springframework.data.cassandra.repository.CassandraRepository;
 import org.springframework.data.cassandra.repository.query.CassandraEntityInformation;
@@ -32,17 +31,16 @@ import static com.datastax.driver.core.querybuilder.QueryBuilder.in;
 /*
 Can a CassandraRepository infer a implementation by having a method called keyspaceAFindAllById()??
 */
-public class SimpleCassandraKeyspaceRepository<T, ID>
-        implements CassandraRepository<T, ID> {
+public class SimpleCassandraKeyspaceRepository<T, ID> implements CassandraRepository<T, ID> {
 
   private final CassandraOperations cassandraTemplate;
   private final CassandraEntityInformation<T, ID> entityInformation;
   private final String keyspace;
 
   public SimpleCassandraKeyspaceRepository(
-          final CassandraOperations cassandraTemplate,
-          final CassandraEntityInformation<T, ID> entityInformation,
-          final String keyspace) {
+      final CassandraOperations cassandraTemplate,
+      final CassandraEntityInformation<T, ID> entityInformation,
+      final String keyspace) {
     this.cassandraTemplate = cassandraTemplate;
     this.entityInformation = entityInformation;
     this.keyspace = keyspace;
@@ -53,6 +51,16 @@ public class SimpleCassandraKeyspaceRepository<T, ID>
     final Insert insert = createInsertStatement(entity);
     getCqlOperations().execute(insert);
     return entity;
+  }
+
+  private <S extends T> Insert createInsertStatement(final S entity) {
+    final CassandraPersistentEntity<?> persistentEntity = getPersistentEntity();
+    final Map<String, Object> toInsert = new LinkedHashMap<>();
+    getConverter().write(entity, toInsert, persistentEntity);
+    final Insert insert =
+            QueryBuilder.insertInto(keyspace, persistentEntity.getTableName().toCql());
+    toInsert.forEach(insert::value);
+    return insert;
   }
 
   private CqlOperations getCqlOperations() {
@@ -72,19 +80,19 @@ public class SimpleCassandraKeyspaceRepository<T, ID>
   @Override
   public List<T> findAll() {
     final Select select =
-            QueryBuilder.select().all().from(keyspace, entityInformation.getTableName().toCql());
+        QueryBuilder.select().all().from(keyspace, entityInformation.getTableName().toCql());
     return cassandraTemplate.select(select, entityInformation.getJavaType());
   }
 
   @Override
   public List<T> findAllById(final Iterable<ID> ids) {
     final List<ID> idCollection =
-            Streamable.of(ids).stream().collect(StreamUtils.toUnmodifiableList());
+        Streamable.of(ids).stream().collect(StreamUtils.toUnmodifiableList());
     return cassandraTemplate.select(
-            QueryBuilder.select()
-                    .from(keyspace, entityInformation.getTableName().toCql())
-                    .where(in(entityInformation.getIdAttribute(), idCollection)),
-            entityInformation.getJavaType());
+        QueryBuilder.select()
+            .from(keyspace, entityInformation.getTableName().toCql())
+            .where(in(entityInformation.getIdAttribute(), idCollection)),
+        entityInformation.getJavaType());
   }
 
   @Override
@@ -95,13 +103,16 @@ public class SimpleCassandraKeyspaceRepository<T, ID>
   @Override
   public boolean existsById(ID id) {
     final CassandraPersistentEntity<?> persistentEntity = getPersistentEntity();
-    final Select select = QueryBuilder.select().from(keyspace, persistentEntity.getTableName().toCql());
+    final Select select =
+        QueryBuilder.select().from(keyspace, persistentEntity.getTableName().toCql());
     getConverter().write(id, select.where(), persistentEntity);
     return getCqlOperations().queryForResultSet(select).iterator().hasNext();
   }
 
   private CassandraPersistentEntity<?> getPersistentEntity() {
-    return getConverter().getMappingContext().getRequiredPersistentEntity(entityInformation.getJavaType());
+    return getConverter()
+        .getMappingContext()
+        .getRequiredPersistentEntity(entityInformation.getJavaType());
   }
 
   private CassandraConverter getConverter() {
@@ -111,19 +122,17 @@ public class SimpleCassandraKeyspaceRepository<T, ID>
   @Override
   public long count() {
     final Select select =
-            QueryBuilder.select()
-                    .countAll()
-                    .from(keyspace,
-                            getPersistentEntity()
-                                    .getTableName()
-                                    .toCql());
+        QueryBuilder.select()
+            .countAll()
+            .from(keyspace, getPersistentEntity().getTableName().toCql());
     return getCqlOperations().queryForObject(select, Long.class);
   }
 
   @Override
   public void deleteById(final ID id) {
     final CassandraPersistentEntity<?> persistentEntity = getPersistentEntity();
-    final Delete delete = QueryBuilder.delete().from(keyspace, persistentEntity.getTableName().toCql());
+    final Delete delete =
+        QueryBuilder.delete().from(keyspace, persistentEntity.getTableName().toCql());
     getConverter().write(id, delete.where(), persistentEntity);
     getCqlOperations().execute(delete);
   }
@@ -132,7 +141,7 @@ public class SimpleCassandraKeyspaceRepository<T, ID>
   public void delete(final T entity) {
     final CassandraPersistentEntity<?> persistentEntity = getPersistentEntity();
     final Delete delete =
-            QueryBuilder.delete().from(keyspace, persistentEntity.getTableName().toCql());
+        QueryBuilder.delete().from(keyspace, persistentEntity.getTableName().toCql());
     getConverter().write(entity, delete.where(), persistentEntity);
     getCqlOperations().execute(delete);
   }
@@ -145,17 +154,7 @@ public class SimpleCassandraKeyspaceRepository<T, ID>
   @Override
   public void deleteAll() {
     getCqlOperations()
-            .execute(QueryBuilder.truncate(keyspace, getPersistentEntity().getTableName().toCql()));
-  }
-
-  private <S extends T> Insert createInsertStatement(final S entity) {
-    final CassandraPersistentEntity<?> persistentEntity = getPersistentEntity();
-    final Map<String, Object> toInsert = new LinkedHashMap<>();
-    getConverter().write(entity, toInsert, persistentEntity);
-    final Insert insert =
-            QueryBuilder.insertInto(keyspace, persistentEntity.getTableName().toCql());
-    toInsert.forEach(insert::value);
-    return insert;
+        .execute(QueryBuilder.truncate(keyspace, getPersistentEntity().getTableName().toCql()));
   }
 
   @Override
@@ -167,10 +166,9 @@ public class SimpleCassandraKeyspaceRepository<T, ID>
 
   @Override
   public Optional<T> findById(ID id) {
-    final CassandraPersistentEntity<?> persistentEntity =
-            getPersistentEntity();
+    final CassandraPersistentEntity<?> persistentEntity = getPersistentEntity();
     final Select select =
-            QueryBuilder.select().all().from(keyspace, persistentEntity.getTableName().toCql());
+        QueryBuilder.select().all().from(keyspace, persistentEntity.getTableName().toCql());
 
     getConverter().write(id, select.where(), persistentEntity);
     return Optional.ofNullable(selectOne(select, entityInformation.getJavaType()));
@@ -182,6 +180,6 @@ public class SimpleCassandraKeyspaceRepository<T, ID>
 
   private <T> List<T> select(Statement statement, Class<T> entityClass) {
     return getCqlOperations()
-            .query(statement, (row, rowNum) -> getConverter().read(entityClass, row));
+        .query(statement, (row, rowNum) -> getConverter().read(entityClass, row));
   }
 }

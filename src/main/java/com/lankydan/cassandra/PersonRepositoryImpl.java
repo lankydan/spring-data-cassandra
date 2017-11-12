@@ -1,24 +1,25 @@
 package com.lankydan.cassandra;
 
 import org.springframework.data.cassandra.core.CassandraOperations;
+import org.springframework.data.cassandra.core.cql.ArgumentPreparedStatementBinder;
 import org.springframework.data.cassandra.repository.query.CassandraEntityInformation;
 
-import java.time.LocalDateTime;
 import java.util.List;
 
 import static com.datastax.driver.core.querybuilder.QueryBuilder.eq;
 import static com.datastax.driver.core.querybuilder.QueryBuilder.select;
 
-public class PersonRepositoryImpl extends SimpleCassandraKeyspaceRepository<Person, PersonKey> implements PersonRepository {
+public class PersonRepositoryImpl extends SimpleCassandraKeyspaceRepository<Person, PersonKey>
+    implements PersonRepository {
 
-  private CassandraOperations cassandraTemplate;
-  private CassandraEntityInformation entityInformation;
-  private String keyspace;
+  private final CassandraOperations cassandraTemplate;
+  private final CassandraEntityInformation entityInformation;
+  private final String keyspace;
 
   public PersonRepositoryImpl(
-          final CassandraOperations cassandraTemplate,
-          final CassandraEntityInformation/*<Person, PersonKey>*/ entityInformation,
-          final String keyspace) {
+      final CassandraOperations cassandraTemplate,
+      final CassandraEntityInformation<Person, PersonKey> entityInformation,
+      final String keyspace) {
     super(cassandraTemplate, entityInformation, keyspace);
     this.cassandraTemplate = cassandraTemplate;
     this.entityInformation = entityInformation;
@@ -26,24 +27,48 @@ public class PersonRepositoryImpl extends SimpleCassandraKeyspaceRepository<Pers
   }
 
   @Override
-  public List<Person> findByKeyFirstName(String firstName) {
-    return null;
+  public List<Person> findByFirstNameQueryBuilder(final String firstName) {
+    return cassandraTemplate.select(
+        select()
+            .from(keyspace, entityInformation.getTableName().toCql())
+            .where(eq("first_name", firstName)),
+        Person.class);
   }
 
   @Override
-  public List<Person> findByKeyFirstNameQueryBuilder(final String firstName) {
-    return cassandraTemplate.select(select().from(keyspace, entityInformation.getTableName().toCql()).where(eq("first_name", firstName)), Person.class);
+  public List<Person> findByFirstNameQueryBuilder2(final String firstName) {
+    // is just the underlying implementation of CqlOperations.select
+    return cassandraTemplate
+        .getCqlOperations()
+        .query(
+            select()
+                .from(keyspace, entityInformation.getTableName().toCql())
+                .where(eq("first_name", firstName)),
+            (row, rowNum) -> cassandraTemplate.getConverter().read(Person.class, row));
   }
 
-  // I think I actually prefer the look of the CQL query compared to the query builder to be honest, looks more familiar.
+  // is a prepared query -> gets turned into a statement so doesnt complain about not being a
+  // prepared query
   @Override
-  public List<Person> findByKeyFirstNameCql(final String firstName) {
-    return cassandraTemplate.getCqlOperations().queryForList("SELECT * FROM :keyspace.people_by_first_name WHERE first_name = :firstName", Person.class, keyspace, firstName);
+  public List<Person> findByFirstNameCql(final String firstName) {
+    // not to keen on the string contact
+    return cassandraTemplate.select(
+        "SELECT * FROM "
+            + keyspace
+            + ".people_by_first_name WHERE first_name = '"
+            + firstName
+            + "'",
+        Person.class);
   }
 
+  // not a prepared query
   @Override
-  public List<Person> findByKeyFirstNameAndKeyDateOfBirthGreaterThan(
-          String firstName, LocalDateTime dateOfBirth) {
-    return cassandraTemplate.getCqlOperations().queryForList("SELECT * FROM :keyspace.people_by_first_name WHERE first_name = :firstName AND date_of_birth >= :dateOfBirth", Person.class, keyspace, firstName, dateOfBirth);
+  public List<Person> findByFirstNameCql2(final String firstName) {
+    return cassandraTemplate
+        .getCqlOperations()
+        .query(
+            "SELECT * FROM " + keyspace + ".people_by_first_name WHERE first_name = ?",
+            new ArgumentPreparedStatementBinder(firstName),
+            (row, rowNum) -> cassandraTemplate.getConverter().read(Person.class, row));
   }
 }
