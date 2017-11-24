@@ -89,3 +89,19 @@ Do I need a separate actor table?
 Need to save data in batches. If one insert fails they must all fail as the data will become inconsistent.
 - How do I do batches in spring data?
  - I assume I cant use the normal cassandra repositories (how do I use my classes with them anyway because I do not have a seperate primary key class)
+
+ I think this is a bit messy to do with entities
+ - I think it really needs to be done via the cassandraTemplate and a single entity
+ - Make a movie table (with entity) pass this entity around and pull out data from it to populate the other tables.
+ - Less cluterred but cant used infered queries.
+ - Tables need to be manually created -> demonstrate using the script runner code on startup
+
+ Add list of actors to the movie tables
+ - pull out the actors from the list to populate the movies_by_actor table and create actor_by_movie records at the same time
+
+ Due to how the data is passed a separate actor table should be made that has more details on the actor that are not contained in the movie object
+
+ Queries will need to transform the columns passed back and remove the partition column data so that generic movie and actor objects can be returned
+
+ CassandraBatchTemplate can only batch insert entities?
+ -> can write my own batch by using CQL

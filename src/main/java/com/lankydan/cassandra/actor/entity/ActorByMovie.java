@@ -1,4 +1,4 @@
-package com.lankydan.cassandra.actor;
+package com.lankydan.cassandra.actor.entity;
 
 import java.time.LocalDateTime;
 import java.util.UUID;
