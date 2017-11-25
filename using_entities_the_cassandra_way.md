@@ -42,6 +42,16 @@ this would give me 3 versions of the movie entity which should provide a good ex
 - double check this data modelling is correct
 
 ```sql
+-- Is my movies table correct? Do I need these clustering columns?
+CREATE TABLE movies(
+  movie_id UUID,
+  release_date TIMESTAMP,
+  title TEXT,
+  genres SET<TEXT>,
+  age_rating TEXT,
+  PRIMARY KEY((movieId), release_date, title)
+) WITH CLUSTERING ORDER BY(release_date DESC, title ASC);
+
 CREATE TABLE movies_by_year(
   year INT,
   release_date TIMESTAMP,
@@ -72,6 +82,13 @@ CREATE TABLE movies_by_actor(
   age_rating TEXT,
   PRIMARY KEY((actor_name), release_date, movie_id, character_name)
 ) WITH CLUSTERING ORDER BY (release_date DESC, movie_id DESC, character_name ASC);
+
+CREATE TABLE actors(
+  id UUID,
+  name TEXT,
+  date_of_birth TIMESTAMP,
+  PRIMARY KEY((id), name, date_of_birth)
+) WITH CLUSTERING ORDER BY(name ASC, date_of_birth ASC);
 
 CREATE TABLE actors_by_movie(
   movie_id UUID,
@@ -105,3 +122,14 @@ Need to save data in batches. If one insert fails they must all fail as the data
 
  CassandraBatchTemplate can only batch insert entities?
  -> can write my own batch by using CQL
+
+ ------------------------------------------------------------------------------
+
+ I've got a bit more Spring Data Cassandra for you now, this will be my 4th post on the subject now and I should probably get onto something else but your stuck with this for now! In this post we will look at a slightly larger example than what I have shown in my previous posts so that we can have a proper look into writing an application that uses Spring Data Cassandra. Most tutorials will only include one example of a small entity that represents a table, which is good enough to get started but doesn't bring you much closer to really understanding what is going on. After googling for a post that covers something like this and coming up with nothing, below we have my take on writing a little application that uses Spring Data to model tables the Cassandra way.
+
+ Before we get started, for background information check out my first post [Getting started with Spring Data Cassandra](URL) which covers parts that will not be explained in depth in this post. Dependencies can also be found in the earlier post.
+
+ First of all we should define the domain that we will be modelling, as I said something little and therefore relatively simple. I decided to use the idea of movies and actors, which I kind of stole from [Datastax Academy](URL) which I strongly recommend looking at for lots of information on Cassandra.
+
+ To start modelling we should define what the user should be able to do.
+  

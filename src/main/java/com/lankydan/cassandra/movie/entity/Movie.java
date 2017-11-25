@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Set;
 import java.util.UUID;
 
+import org.springframework.data.cassandra.core.cql.Ordering;
 import org.springframework.data.cassandra.core.cql.PrimaryKeyType;
 import org.springframework.data.cassandra.core.mapping.Column;
 import org.springframework.data.cassandra.core.mapping.PrimaryKeyColumn;
@@ -18,11 +19,11 @@ public class Movie {
   @PrimaryKeyColumn(name = "movie_id", type = PrimaryKeyType.PARTITIONED)
   private UUID id;
 
-  @Column
-  private String title;
-
-  @Column
+  @PrimaryKeyColumn(name = "release_date", ordinal = 0, ordering = Ordering.DESCENDING)
   private LocalDateTime releaseDate;
+
+  @PrimaryKeyColumn(name = "title", ordinal = 1, ordering = Ordering.ASCENDING)
+  private String title;
 
   @Column
   private Set<String> genres;
