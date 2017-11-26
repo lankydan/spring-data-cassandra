@@ -11,5 +11,5 @@ import java.util.UUID;
 @Repository
 public interface ActorByMovieRepository extends CassandraRepository<ActorByMovie, ActorByMovieKey>{
 
-  List<ActorByMovie> findByKeyMovieIdAndKeyActorName(UUID movieId, String actorName);
+  List<ActorByMovie> findByKeyMovieId(UUID movieId);
 }

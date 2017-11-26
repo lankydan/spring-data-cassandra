@@ -15,9 +15,26 @@ import org.springframework.data.cassandra.repository.support.MappingCassandraEnt
 public class MovieConfig {
 
   @Bean
-  public MovieRepository movieRepository(final CassandraTemplate cassandraTemplate, final MovieByActorRepository movieByActorRepository, final MovieByYearRepository movieByYearRepository, final MovieByGenreRepository movieByGenreRepository, final ActorByMovieRepository actorByMovieRepository) {
-    final CassandraPersistentEntity<?> entity = cassandraTemplate.getConverter().getMappingContext().getRequiredPersistentEntity(Movie.class);
-    final CassandraEntityInformation<Movie, UUID> metadata = new MappingCassandraEntityInformation<>((CassandraPersistentEntity<Movie>) entity, cassandraTemplate.getConverter());
-    return new MovieRepositoryImpl(metadata, cassandraTemplate, movieByActorRepository, movieByYearRepository, movieByGenreRepository, actorByMovieRepository);
+  public MovieRepository movieRepository(
+      final CassandraTemplate cassandraTemplate,
+      final MovieByActorRepository movieByActorRepository,
+      final MovieByYearRepository movieByYearRepository,
+      final MovieByGenreRepository movieByGenreRepository,
+      final ActorByMovieRepository actorByMovieRepository) {
+    final CassandraPersistentEntity<?> entity =
+        cassandraTemplate
+            .getConverter()
+            .getMappingContext()
+            .getRequiredPersistentEntity(Movie.class);
+    final CassandraEntityInformation<Movie, UUID> metadata =
+        new MappingCassandraEntityInformation<>(
+            (CassandraPersistentEntity<Movie>) entity, cassandraTemplate.getConverter());
+    return new MovieRepositoryImpl(
+        metadata,
+        cassandraTemplate,
+        movieByActorRepository,
+        movieByYearRepository,
+        movieByGenreRepository,
+        actorByMovieRepository);
   }
 }

@@ -1,4 +1,4 @@
-package com.lankydan;
+package com.lankydan.cassandra;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Configuration;

@@ -1,31 +1,19 @@
 package com.lankydan.cassandra.actor.entity;
 
-import java.time.LocalDateTime;
-import java.util.UUID;
+import org.springframework.data.cassandra.core.mapping.PrimaryKey;
+import org.springframework.data.cassandra.core.mapping.Table;
 
-import org.springframework.data.cassandra.core.cql.Ordering;
-import org.springframework.data.cassandra.core.cql.PrimaryKeyType;
-import org.springframework.data.cassandra.core.mapping.Column;
-import org.springframework.data.cassandra.core.mapping.PrimaryKeyColumn;
-
+@Table("actors_by_movie")
 public class ActorByMovie {
 
-  @PrimaryKeyColumn(name = "movie_id", type = PrimaryKeyType.PARTITIONED)
-  private UUID movieId;
+  @PrimaryKey private ActorByMovieKey key;
 
-  @PrimaryKeyColumn(name = "release_date", ordinal = 0, ordering = Ordering.DESCENDING)
-  private LocalDateTime releaseDate;
+  public ActorByMovie(final ActorByMovieKey key) {
+    this.key = key;
+  }
 
-  @PrimaryKeyColumn(name = "actor_name", ordinal = 1)
-  private String name;
-
-  @PrimaryKeyColumn(name = "character_name", ordinal = 2)
-  private String characterName;
-
-  public ActorByMovie(final UUID movieId, final LocalDateTime releaseDate, final String name, final String characterName) {
-    this.movieId = movieId;
-    this.releaseDate = releaseDate;
-    this.name = name;
-    this.characterName = characterName;
+  @Override
+  public String toString() {
+    return "ActorByMovie{" + "key=" + key + '}';
   }
 }

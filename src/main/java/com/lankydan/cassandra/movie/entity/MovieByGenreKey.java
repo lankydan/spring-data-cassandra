@@ -1,15 +1,12 @@
 package com.lankydan.cassandra.movie.entity;
 
-import java.time.LocalDateTime;
-import java.util.Set;
-import java.util.UUID;
-
 import org.springframework.data.cassandra.core.cql.Ordering;
 import org.springframework.data.cassandra.core.cql.PrimaryKeyType;
-import org.springframework.data.cassandra.core.mapping.Column;
 import org.springframework.data.cassandra.core.mapping.PrimaryKeyClass;
 import org.springframework.data.cassandra.core.mapping.PrimaryKeyColumn;
-import org.springframework.data.cassandra.core.mapping.Table;
+
+import java.time.LocalDateTime;
+import java.util.UUID;
 
 @PrimaryKeyClass
 public class MovieByGenreKey {
@@ -21,12 +18,48 @@ public class MovieByGenreKey {
   private LocalDateTime releaseDate;
 
   @PrimaryKeyColumn(name = "movie_id", ordinal = 1, ordering = Ordering.DESCENDING)
-  private UUID id;
+  private UUID movieId;
 
-  public MovieByGenreKey(final String genre, final LocalDateTime releaseDate, final UUID id) {
+  public MovieByGenreKey(final String genre, final LocalDateTime releaseDate, final UUID movieId) {
     this.genre = genre;
     this.releaseDate = releaseDate;
-    this.id = id;
+    this.movieId = movieId;
   }
-  
+
+  public String getGenre() {
+    return genre;
+  }
+
+  public void setGenre(String genre) {
+    this.genre = genre;
+  }
+
+  public LocalDateTime getReleaseDate() {
+    return releaseDate;
+  }
+
+  public void setReleaseDate(LocalDateTime releaseDate) {
+    this.releaseDate = releaseDate;
+  }
+
+  public UUID getMovieId() {
+    return movieId;
+  }
+
+  public void setMovieId(UUID movieId) {
+    this.movieId = movieId;
+  }
+
+  @Override
+  public String toString() {
+    return "MovieByGenreKey{"
+        + "genre='"
+        + genre
+        + '\''
+        + ", releaseDate="
+        + releaseDate
+        + ", movieId="
+        + movieId
+        + '}';
+  }
 }

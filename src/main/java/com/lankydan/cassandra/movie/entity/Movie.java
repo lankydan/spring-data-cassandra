@@ -1,40 +1,40 @@
 package com.lankydan.cassandra.movie.entity;
 
-import java.time.LocalDateTime;
-import java.util.List;
-import java.util.Set;
-import java.util.UUID;
-
-import org.springframework.data.cassandra.core.cql.Ordering;
+import org.springframework.data.annotation.Transient;
 import org.springframework.data.cassandra.core.cql.PrimaryKeyType;
 import org.springframework.data.cassandra.core.mapping.Column;
 import org.springframework.data.cassandra.core.mapping.PrimaryKeyColumn;
 import org.springframework.data.cassandra.core.mapping.Table;
 
-// movie should also be a entity?
-// dont include actors in the columns
+import java.time.LocalDateTime;
+import java.util.List;
+import java.util.Set;
+import java.util.UUID;
+
 @Table("movies")
 public class Movie {
 
   @PrimaryKeyColumn(name = "movie_id", type = PrimaryKeyType.PARTITIONED)
   private UUID id;
 
-  @PrimaryKeyColumn(name = "release_date", ordinal = 0, ordering = Ordering.DESCENDING)
+  @Column("release_date")
   private LocalDateTime releaseDate;
 
-  @PrimaryKeyColumn(name = "title", ordinal = 1, ordering = Ordering.ASCENDING)
-  private String title;
+  @Column private String title;
 
-  @Column
-  private Set<String> genres;
+  @Column private Set<String> genres;
 
-  @Column
+  @Column("age_rating")
   private String ageRating;
 
-  private List<Role> roles;
+  @Transient private List<Role> roles;
 
-  // make a builder?
-  public Movie(final String title, final LocalDateTime releaseDate, final Set<String> genres, final String ageRating, final List<Role> roles) {
+  public Movie(
+      final String title,
+      final LocalDateTime releaseDate,
+      final Set<String> genres,
+      final String ageRating,
+      final List<Role> roles) {
     this.title = title;
     this.releaseDate = releaseDate;
     this.genres = genres;
@@ -42,14 +42,7 @@ public class Movie {
     this.roles = roles;
   }
 
-  public Movie(final UUID id, final String title, final LocalDateTime releaseDate, final Set<String> genres, final String ageRating, final List<Role> roles) {
-    this.id = id;
-    this.title = title;
-    this.releaseDate = releaseDate;
-    this.genres = genres;
-    this.ageRating = ageRating;
-    this.roles = roles;
-  }
+  public Movie() {}
 
   public UUID getId() {
     return id;
@@ -99,4 +92,23 @@ public class Movie {
     this.roles = roles;
   }
 
+  @Override
+  public String toString() {
+    return "Movie{"
+        + "id="
+        + id
+        + ", releaseDate="
+        + releaseDate
+        + ", title='"
+        + title
+        + '\''
+        + ", genres="
+        + genres
+        + ", ageRating='"
+        + ageRating
+        + '\''
+        + ", roles="
+        + roles
+        + '}';
+  }
 }

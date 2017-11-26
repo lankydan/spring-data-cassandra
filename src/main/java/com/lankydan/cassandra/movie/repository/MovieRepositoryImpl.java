@@ -2,21 +2,19 @@ package com.lankydan.cassandra.movie.repository;
 
 import com.lankydan.cassandra.actor.ActorByMovieRepository;
 import com.lankydan.cassandra.actor.entity.ActorByMovie;
+import com.lankydan.cassandra.actor.entity.ActorByMovieKey;
 import com.lankydan.cassandra.movie.entity.*;
 import org.springframework.data.cassandra.core.CassandraBatchOperations;
 import org.springframework.data.cassandra.core.CassandraTemplate;
 import org.springframework.data.cassandra.repository.query.CassandraEntityInformation;
 import org.springframework.data.cassandra.repository.support.SimpleCassandraRepository;
-import org.springframework.stereotype.Repository;
 
-import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Set;
 import java.util.UUID;
 
-@Repository
-public class MovieRepositoryImpl extends SimpleCassandraRepository<Movie, UUID> implements MovieRepository {
+public class MovieRepositoryImpl extends SimpleCassandraRepository<Movie, UUID>
+    implements MovieRepository {
 
   private final CassandraTemplate cassandraTemplate;
   private final MovieByActorRepository movieByActorRepository;
@@ -24,7 +22,13 @@ public class MovieRepositoryImpl extends SimpleCassandraRepository<Movie, UUID> 
   private final MovieByGenreRepository movieByGenreRepository;
   private final ActorByMovieRepository actorByMovieRepository;
 
-  public MovieRepositoryImpl(CassandraEntityInformation<Movie, UUID> metadata, final CassandraTemplate cassandraTemplate, final MovieByActorRepository movieByActorRepository, final MovieByYearRepository movieByYearRepository, final MovieByGenreRepository movieByGenreRepository, final ActorByMovieRepository actorByMovieRepository) {
+  public MovieRepositoryImpl(
+      final CassandraEntityInformation<Movie, UUID> metadata,
+      final CassandraTemplate cassandraTemplate,
+      final MovieByActorRepository movieByActorRepository,
+      final MovieByYearRepository movieByYearRepository,
+      final MovieByGenreRepository movieByGenreRepository,
+      final ActorByMovieRepository actorByMovieRepository) {
     super(metadata, cassandraTemplate);
     this.cassandraTemplate = cassandraTemplate;
     this.movieByActorRepository = movieByActorRepository;
@@ -33,45 +37,102 @@ public class MovieRepositoryImpl extends SimpleCassandraRepository<Movie, UUID> 
     this.actorByMovieRepository = actorByMovieRepository;
   }
 
-  // save should be implemented -> really it should just be a copy of insert
-
   @Override
   public <S extends Movie> S insert(final S movie) {
-    final UUID id = UUID.randomUUID();
-    final String title = movie.getTitle();
-    final LocalDateTime releaseDate = movie.getReleaseDate();
-    final Set<String> genres = movie.getGenres();
-    final String ageRating = movie.getAgeRating();
-    final List<Role> roles = movie.getRoles();
+    movie.setId(UUID.randomUUID());
     final CassandraBatchOperations batchOps = cassandraTemplate.batchOps();
-    roles.forEach(r -> {
-      batchOps.insert(new MovieByActor(r.getActorName(), releaseDate, id, r.getCharacterName(), title, genres, ageRating));
-      batchOps.insert(new ActorByMovie(id, releaseDate, r.getActorName(), r.getCharacterName()));
-    });
-    genres.forEach(g -> batchOps.insert(new MovieByGenre(g, releaseDate, id, title, genres, ageRating)));
-    batchOps.insert(new MovieByYear(releaseDate.getYear(), releaseDate, id, title, genres, ageRating));
+    insertByActor(movie, batchOps);
+    insertByGenre(movie, batchOps);
+    insertByYear(movie, batchOps);
     batchOps.insert(movie);
     batchOps.execute();
     return movie;
   }
 
-  @Override
-  public void deleteById(final UUID id) {
-    findById(id).ifPresent(this::delete);
+  private void insertByActor(final Movie movie, final CassandraBatchOperations batchOps) {
+    movie
+        .getRoles()
+        .forEach(
+            r -> {
+              batchOps.insert(
+                  new MovieByActor(
+                      new MovieByActorKey(
+                          r.getActorName(),
+                          movie.getReleaseDate(),
+                          movie.getId(),
+                          r.getCharacterName()),
+                      movie.getTitle(),
+                      movie.getGenres(),
+                      movie.getAgeRating()));
+              batchOps.insert(
+                  new ActorByMovie(
+                      new ActorByMovieKey(
+                          movie.getId(),
+                          movie.getReleaseDate(),
+                          r.getActorName(),
+                          r.getCharacterName())));
+            });
+  }
+
+  private void insertByGenre(final Movie movie, final CassandraBatchOperations batchOps) {
+    movie
+        .getGenres()
+        .forEach(
+            g ->
+                batchOps.insert(
+                    new MovieByGenre(
+                        new MovieByGenreKey(g, movie.getReleaseDate(), movie.getId()),
+                        movie.getTitle(),
+                        movie.getGenres(),
+                        movie.getAgeRating())));
+  }
+
+  private void insertByYear(final Movie movie, final CassandraBatchOperations batchOps) {
+    batchOps.insert(
+        new MovieByYear(
+            new MovieByYearKey(
+                movie.getReleaseDate().getYear(), movie.getReleaseDate(), movie.getId()),
+            movie.getTitle(),
+            movie.getGenres(),
+            movie.getAgeRating()));
   }
 
   @Override
   public void delete(final Movie movie) {
-    final Set<String> genres = movie.getGenres();
-    final List<Role> roles = movie.getRoles();
     final CassandraBatchOperations batchOps = cassandraTemplate.batchOps();
-    roles.forEach(r -> {
-      batchOps.delete(movieByActorRepository.findByKeyActorNameAndKeyMovieId(r.getActorName(), movie.getId()));
-      batchOps.delete(actorByMovieRepository.findByKeyMovieIdAndKeyActorName(movie.getId(), r.getActorName()));
-    });
-    genres.forEach(g -> batchOps.delete(movieByGenreRepository.findByKeyGenreAndKeyMovieId(g, movie.getId())));
-    batchOps.delete(movieByYearRepository.findByKeyYearAndKeyMovieId(movie.getReleaseDate().getYear(), movie.getId()));
+    deleteByActor(movie, batchOps);
+    deleteByGenre(movie, batchOps);
+    deleteByYear(movie, batchOps);
+    batchOps.delete(movie);
     batchOps.execute();
+  }
+
+  private void deleteByActor(final Movie movie, final CassandraBatchOperations batchOps) {
+    batchOps.delete(
+        movieByActorRepository.findByKeyReleaseDateAndKeyMovieId(
+            movie.getReleaseDate(), movie.getId()));
+    batchOps.delete(actorByMovieRepository.findByKeyMovieId(movie.getId()));
+  }
+
+  private void deleteByGenre(final Movie movie, final CassandraBatchOperations batchOps) {
+    movie
+        .getGenres()
+        .forEach(
+            g ->
+                batchOps.delete(
+                    movieByGenreRepository.findByKeyGenreAndKeyReleaseDateAndKeyMovieId(
+                        g, movie.getReleaseDate(), movie.getId())));
+  }
+
+  private void deleteByYear(final Movie movie, final CassandraBatchOperations batchOps) {
+    batchOps.delete(
+        movieByYearRepository.findByKeyYearAndKeyReleaseDateAndKeyMovieId(
+            movie.getReleaseDate().getYear(), movie.getReleaseDate(), movie.getId()));
+  }
+
+  @Override
+  public void deleteById(final UUID id) {
+    findById(id).ifPresent(this::delete);
   }
 
   @Override
@@ -86,7 +147,6 @@ public class MovieRepositoryImpl extends SimpleCassandraRepository<Movie, UUID> 
 
   @Override
   public <S extends Movie> List<S> insert(final Iterable<S> movies) {
-//    movies.forEach(this::insert);
     final List<S> result = new ArrayList<>();
     for (final S movie : movies) {
       result.add(insert(movie));
@@ -103,6 +163,4 @@ public class MovieRepositoryImpl extends SimpleCassandraRepository<Movie, UUID> 
   public <S extends Movie> List<S> saveAll(final Iterable<S> movies) {
     return insert(movies);
   }
-
-
 }

@@ -24,7 +24,8 @@ public class ActorByMovieKey implements Serializable {
   @PrimaryKeyColumn(name = "character_name", ordinal = 2)
   private String characterName;
 
-  public ActorByMovieKey(UUID movieId, LocalDateTime releaseDate, String name, String characterName) {
+  public ActorByMovieKey(
+      UUID movieId, LocalDateTime releaseDate, String name, String characterName) {
     this.movieId = movieId;
     this.releaseDate = releaseDate;
     this.name = name;
@@ -61,5 +62,21 @@ public class ActorByMovieKey implements Serializable {
 
   public void setCharacterName(String characterName) {
     this.characterName = characterName;
+  }
+
+  @Override
+  public String toString() {
+    return "ActorByMovieKey{"
+        + "movieId="
+        + movieId
+        + ", releaseDate="
+        + releaseDate
+        + ", name='"
+        + name
+        + '\''
+        + ", characterName='"
+        + characterName
+        + '\''
+        + '}';
   }
 }
