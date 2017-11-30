@@ -47,5 +47,8 @@ create keyspace myKeyspace with replication = {'class':'SimpleStrategy', 'replic
 Durable writes specifies if the commit log is skipped when writing to the database. If `false` the commit log will be bypassed and when `true` writes will be sent their first ensuring that eventually all writes are persisted in the case of any network issues. Durable writes should never be set to `false` when using `SimpleStrategy` replication.
 
 
+.
+
+
 
 
