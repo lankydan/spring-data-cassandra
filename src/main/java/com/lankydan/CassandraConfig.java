@@ -17,14 +17,14 @@ public class CassandraConfig extends AbstractCassandraConfiguration {
   private int port;
 
   @Value("${cassandra.keyspace}")
-  private String keySpace;
+  private String keyspace;
 
   @Value("${cassandra.basepackages}")
   private String basePackages;
 
   @Override
   protected String getKeyspaceName() {
-    return keySpace;
+    return keyspace;
   }
 
   @Override
