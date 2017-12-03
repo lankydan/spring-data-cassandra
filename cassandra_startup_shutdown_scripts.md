@@ -8,7 +8,24 @@ Anyway, lets get started before the introduction is longer than the actual post.
 
 There are two ways of writing startup and shutdown scripts, either by using the various query builders tailor made for this situation or by CQL directly. The one you choose is up to you and I don't think either one is better than the other, because at the end of the day theres not a ton that they need to do. Assuming you are using the `@Table` annotation on your entities and have `SchemaAction.CREATE_IF_NOT_EXITS` chosen in your configuration then your scripts will be even shorter as you don't need to think about creating any tables.
 
-Being it's straight forward we'll just jump into the small amount of code there is right now.
+Before we start looking at the code we should first understand what creating a keyspace consists of.
+
+- The keyspace name.
+- `IF NOT EXISTS` will only attempt to create the keyspace if it does not already exist when this statement is added.
+- Replication strategy
+ - `SimpleStrategy` assigns the same replication factor to the entire cluster. This should be used for testing or local development environments where the way that data is replicated is not the primary concern.
+```sql
+CREATE KEYSPACE myKeyspace WITH REPLICATION = {'class': 'SimpleStrategy', 'replication_factor': 1};
+```
+ - `NetworkTopolgyStrategy` assigns specific replication factors to each datacenter defined within a comma separated list. This should be used in production environments.
+```sql
+CREATE KEYSPACE myKeyspace WITH REPLICATION = {'class': 'NetworkTopolgyStrategy', 'datacenter_1': 1, 'datacenter_2': 2};
+```
+- `DURABLE_WRITES` specifies if the commit log is skipped when writing to the database. If `false` the commit log will be bypassed and when `true` writes will be sent their first ensuring that eventually all writes are persisted in the case of any network issues. Durable writes should never be set to `false` when using `SimpleStrategy` replication. This property is optional and will defalt to `true` if not set.
+```sql
+CREATE KEYSPACE myKeyspace WITH REPLICATION = {'class':'SimpleStrategy', 'replication_factor': 1} AND DURABLE_WRITES = false;
+```
+Now that we have looked through what goes into creating a keyspace we can look at the code that does so.
 ```java
 @Configuration
 public class ClusterConfig extends AbstractClusterConfiguration {
@@ -33,21 +50,15 @@ Here we have `ClusterConfig` which does some cluster configuration by extending 
 
 By extending `AbstractClusterConfiguration` we are able to override `getKeyspaceCreations` and `getKeyspaceDrops` which will be run at startup and shutdown. As the method names suggest these will create and drop keyspaces. By creating and dropping a table we are effectively truncating the table which is can be helpful for testing your code.
 
-Creating a keyspace consists of two components; replication strategy and durable writes.
-
-Replication strategy
-- SimpleStrategy - Assigns the same replication factor to the entire cluster. This should be used for testing or local development environments where the way that data is replicated is not the primary concern.
+`CreateKeyspaceSpecification` provides methods to create a statement that will be converted to CQL and execute a query similar to the CQL shown earlier. The CQL generated for the above example would be:
 ```sql
-create keyspace myKeyspace with replication = {'class':'SimpleStrategy', 'replication_factor':1};
+CREATE KEYSPACE myKeyspace IF NOT EXISTS WITH REPLICATION = {'class': 'SimpleStrategy', 'replication_factor': 1} AND DURABLE_WRITES = true;
 ```
-- NetworkTopolgyStrategy - Assigns specific replication factors to each datacenter defined within a comma separated list. This should be used in production environments.
+`DropKeyspaceSpecification` is even easier, all it does is drop a keyspace. Either by a `String` or `KeyspaceIdentifier` name. The CQL generated would be:
 ```sql
-create keyspace myKeyspace with replication = {'class':'SimpleStrategy', 'replication_factor':1};
+DROP KEYSPACE myKeyspace;
 ```
-Durable writes specifies if the commit log is skipped when writing to the database. If `false` the commit log will be bypassed and when `true` writes will be sent their first ensuring that eventually all writes are persisted in the case of any network issues. Durable writes should never be set to `false` when using `SimpleStrategy` replication.
-
-
-.
+See, nice and easy.
 
 
 
