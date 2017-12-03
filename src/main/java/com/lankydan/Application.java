@@ -1,12 +1,13 @@
 package com.lankydan;
 
-import com.lankydan.cassandra.Person;
-import com.lankydan.cassandra.PersonKey;
-import com.lankydan.cassandra.PersonRepository;
+import com.lankydan.cassandra.person.Person;
+import com.lankydan.cassandra.person.PersonKey;
+import com.lankydan.cassandra.person.PersonRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.support.AbstractApplicationContext;
 
 import java.time.LocalDateTime;
 import java.util.UUID;
@@ -15,6 +16,9 @@ import java.util.UUID;
 public class Application implements CommandLineRunner {
 
   @Autowired private PersonRepository personRepository;
+
+  @Autowired
+  private AbstractApplicationContext context;
 
   public static void main(final String args[]) {
     SpringApplication.run(Application.class);
@@ -36,5 +40,7 @@ public class Application implements CommandLineRunner {
 
     System.out.println("find by last name");
     personRepository.findByLastName("Doe").forEach(System.out::println);
+
+    context.close();
   }
 }
