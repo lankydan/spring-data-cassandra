@@ -13,8 +13,7 @@ import org.springframework.data.cassandra.repository.config.EnableCassandraRepos
 
 @Configuration
 @EnableCassandraRepositories
-public class CassandraConfig extends AbstractCassandraConfiguration
-    implements BeanClassLoaderAware {
+public class CassandraConfig extends AbstractCassandraConfiguration {
 
   @Value("${cassandra.contactpoints}")
   private String contactPoints;
