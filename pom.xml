@@ -7,22 +7,34 @@
   <groupId>spring-boot-cassandra</groupId>
   <artifactId>spring-boot-cassandra</artifactId>
   <version>1.0.0</version>
+  <!-- <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <configuration>
+          <source>9</source>
+          <target>9</target>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build> -->
 
   <parent>
     <groupId>org.springframework.boot</groupId>
     <artifactId>spring-boot-starter-parent</artifactId>
-    <version>2.0.0.M4</version>
+    <version>2.0.0.M6</version>
   </parent>
 
   <properties>
-    <java.version>9</java.version>
-    <!--<java.version>1.8</java.version>-->
+    <java.version>9.0.1</java.version>
+    <!-- <java.version>1.8</java.version> -->
   </properties>
 
   <dependencies>
     <dependency>
       <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot-starter-data-cassandra</artifactId>
+      <artifactId>spring-boot-starter-data-cassandra-reactive</artifactId>
       <version>2.0.0.M3</version>
     </dependency>
     <!--<dependency>-->

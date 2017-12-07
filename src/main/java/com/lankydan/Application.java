@@ -27,14 +27,9 @@ public class Application implements CommandLineRunner {
     personRepository.insert(p);
 
     System.out.println("find by first name");
-    personRepository.findByKeyFirstName("John").forEach(System.out::println);
+    personRepository.findByKeyFirstName("John").log().map(Person::getLastName).subscribe(System.out::println);
 
-    System.out.println("find by first name and date of birth greater than date");
-    personRepository
-        .findByKeyFirstNameAndKeyDateOfBirthGreaterThan("John", LocalDateTime.now().minusDays(1))
-        .forEach(System.out::println);
-
-    System.out.println("find by last name");
-    personRepository.findByLastName("Doe").forEach(System.out::println);
+    System.out.println("find one by first name");
+    personRepository.findOneByKeyFirstName("John").log().map(Person::getLastName).subscribe(System.out::println);
   }
 }

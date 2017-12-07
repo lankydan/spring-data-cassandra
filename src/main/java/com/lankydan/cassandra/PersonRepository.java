@@ -1,20 +1,15 @@
 package com.lankydan.cassandra;
 
-import org.springframework.data.cassandra.repository.CassandraRepository;
-import org.springframework.data.cassandra.repository.Query;
+import org.springframework.data.cassandra.repository.ReactiveCassandraRepository;
 import org.springframework.stereotype.Repository;
 
-import java.time.LocalDateTime;
-import java.util.List;
+import reactor.core.publisher.Flux;
+import reactor.core.publisher.Mono;
 
 @Repository
-public interface PersonRepository extends CassandraRepository<Person, PersonKey> {
+public interface PersonRepository extends ReactiveCassandraRepository<Person, PersonKey> {
 
-  List<Person> findByKeyFirstName(final String firstName);
+  Flux<Person> findByKeyFirstName(final String firstName);
 
-  List<Person> findByKeyFirstNameAndKeyDateOfBirthGreaterThan(
-      final String firstName, final LocalDateTime dateOfBirth);
-
-  @Query(allowFiltering = true)
-  List<Person> findByLastName(final String lastName);
+  Mono<Person> findOneByKeyFirstName(final String firstName);
 }

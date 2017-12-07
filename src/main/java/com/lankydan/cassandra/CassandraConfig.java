@@ -1,14 +1,14 @@
-package com.lankydan;
+package com.lankydan.cassandra;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.data.cassandra.config.AbstractCassandraConfiguration;
+import org.springframework.data.cassandra.config.AbstractReactiveCassandraConfiguration;
 import org.springframework.data.cassandra.config.SchemaAction;
-import org.springframework.data.cassandra.repository.config.EnableCassandraRepositories;
+import org.springframework.data.cassandra.repository.config.EnableReactiveCassandraRepositories;
 
 @Configuration
-@EnableCassandraRepositories
-public class CassandraConfig extends AbstractCassandraConfiguration {
+@EnableReactiveCassandraRepositories
+public class CassandraConfig extends AbstractReactiveCassandraConfiguration {
 
   @Value("${cassandra.contactpoints}")
   private String contactPoints;
@@ -17,14 +17,14 @@ public class CassandraConfig extends AbstractCassandraConfiguration {
   private int port;
 
   @Value("${cassandra.keyspace}")
-  private String keySpace;
+  private String keyspace;
 
   @Value("${cassandra.basepackages}")
   private String basePackages;
 
   @Override
   protected String getKeyspaceName() {
-    return keySpace;
+    return keyspace;
   }
 
   @Override
@@ -44,6 +44,6 @@ public class CassandraConfig extends AbstractCassandraConfiguration {
 
   @Override
   public String[] getEntityBasePackages() {
-    return new String[] {basePackages};
+    return new String[]{basePackages};
   }
 }
