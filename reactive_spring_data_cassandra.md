@@ -28,3 +28,58 @@ This dependency does not actually add extra reactive functionality to your Sprin
 
 In this post we will be using Reactor Core instead of RxJava.
 
+Now if you haven't realised yet, I am going to say the word "reactive" a lot. Most of the setup required to go from a normal Spring Data Cassandra application to a reactive one is the addition of "reactive" to the class name. For example we will use `AbstractReactiveCassandraConfiguration` instead of `AbstractCassandraConfiguration` and `@EnableReactiveCassandraRepositories` rather than `@EnableCassandraRepositories`. 
+
+Below is a basic configuration class to get everything setup. More explaination into the individual components of this class can be found in my earlier post [Getting started with Spring Data Cassandra](URL).
+```java
+@Configuration
+@EnableReactiveCassandraRepositories
+public class CassandraConfig extends AbstractReactiveCassandraConfiguration {
+
+  @Value("${cassandra.contactpoints}")
+  private String contactPoints;
+
+  @Value("${cassandra.port}")
+  private int port;
+
+  @Value("${cassandra.keyspace}")
+  private String keyspace;
+
+  @Value("${cassandra.basepackages}")
+  private String basePackages;
+
+  @Override
+  protected String getKeyspaceName() {
+    return keyspace;
+  }
+
+  @Override
+  protected String getContactPoints() {
+    return contactPoints;
+  }
+
+  @Override
+  protected int getPort() {
+    return port;
+  }
+
+  @Override
+  public SchemaAction getSchemaAction() {
+    return SchemaAction.CREATE_IF_NOT_EXISTS;
+  }
+
+  @Override
+  public String[] getEntityBasePackages() {
+    return new String[]{basePackages};
+  }
+}
+```
+This class will provide all the standard setup that the non reactive version has but does some extra magic, like creating a `ReactiveSession` and `ReactiveCassandraTemplate`... I did mention that "reactive" would be said a lot didn't I.
+
+If you used entities, like I did in this post, these do not need to change and will continue working as they did before. This is probably the one place where you don't need to add "reactive" to the code.
+
+Next, we have the `PersonRepository` which extends `ReactiveCassandraRepository`. Here we see some extra changes with `Flux` and `Mono` finally appearing. These objects replace the use of `List` and singular objects. Therefore in this example `Flux<Person>` replaces `List<Person>` and `Mono<Person>` is used instead of the `Person` object directly. By using these constructs we are able to perform functions on elements as they come whereas normally you would wait till all of the records are returned and then do something with them. This is what allows us to program reactively.
+
+Nothing else needs to change when compared to a normal `CassandraRepository` the queries are still inferred in the same way but what happens behinds the scenes changes and provides us with the different return types of `Flux` and `Mono`.
+
+The last thing we need to look at is how to use them. The example in this post isn't the best as there is only so much I can do in a short tutorial but hopefully it gives you an idea in what you can do with reactive streams.

@@ -24,12 +24,12 @@ public class Application implements CommandLineRunner {
   public void run(String... args) throws Exception {
     final PersonKey key = new PersonKey("John", LocalDateTime.now(), UUID.randomUUID());
     final Person p = new Person(key, "Doe", 1000);
-    personRepository.insert(p);
+    personRepository.save(p);
 
-    System.out.println("find by first name");
-    personRepository.findByKeyFirstName("John").log().map(Person::getLastName).subscribe(System.out::println);
-
-    System.out.println("find one by first name");
-    personRepository.findOneByKeyFirstName("John").log().map(Person::getLastName).subscribe(System.out::println);
+//    System.out.println("find by first name");
+//    personRepository.findByKeyFirstName("John").log().map(Person::getLastName).subscribe(System.out::println);
+//
+//    System.out.println("find one by first name");
+//    personRepository.findOneByKeyFirstName("John").log().map(Person::getLastName).subscribe(System.out::println);
   }
 }
