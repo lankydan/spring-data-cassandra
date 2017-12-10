@@ -1,20 +1,25 @@
 package com.lankydan;
 
+import java.time.LocalDateTime;
+import java.util.List;
+import java.util.UUID;
+
 import com.lankydan.cassandra.Person;
 import com.lankydan.cassandra.PersonKey;
 import com.lankydan.cassandra.PersonRepository;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-
-import java.time.LocalDateTime;
-import java.util.UUID;
+import org.springframework.context.support.AbstractApplicationContext;
 
 @SpringBootApplication
 public class Application implements CommandLineRunner {
 
   @Autowired private PersonRepository personRepository;
+
+  @Autowired private AbstractApplicationContext context;
 
   public static void main(final String args[]) {
     SpringApplication.run(Application.class);
@@ -22,14 +27,38 @@ public class Application implements CommandLineRunner {
 
   @Override
   public void run(String... args) throws Exception {
-    final PersonKey key = new PersonKey("John", LocalDateTime.now(), UUID.randomUUID());
-    final Person p = new Person(key, "Doe", 1000);
-    personRepository.save(p);
+    final Person a =
+        new Person(new PersonKey("John", LocalDateTime.now(), UUID.randomUUID()), "A", 1000);
+    final Person b =
+        new Person(new PersonKey("John", LocalDateTime.now(), UUID.randomUUID()), "B", 1000);
+    final Person c =
+        new Person(new PersonKey("John", LocalDateTime.now(), UUID.randomUUID()), "C", 1000);
+    final Person d =
+        new Person(new PersonKey("Not John", LocalDateTime.now(), UUID.randomUUID()), "D", 1000);
 
-//    System.out.println("find by first name");
-//    personRepository.findByKeyFirstName("John").log().map(Person::getLastName).subscribe(System.out::println);
-//
-//    System.out.println("find one by first name");
-//    personRepository.findOneByKeyFirstName("John").log().map(Person::getLastName).subscribe(System.out::println);
+    personRepository.insert(List.of(a, b, c, d)).subscribe();
+
+    System.out.println("starting findAll");
+    personRepository
+        .findAll()
+        .log()
+        .map(Person::getLastName)
+        .subscribe(l -> System.out.println("findAll: " + l));
+    System.out.println("starting findByKeyFirstName");
+
+    personRepository
+        .findByKeyFirstName("John")
+        .log()
+        .map(Person::getLastName)
+        .subscribe(l -> System.out.println("findByKeyFirstName: " + l));
+    System.out.println("starting findOneByKeyFirstName");
+
+    personRepository
+        .findOneByKeyFirstName("John")
+        .log()
+        .map(Person::getLastName)
+        .subscribe(l -> System.out.println("findOneByKeyFirstName: " + l));
+
+    context.close();
   }
 }

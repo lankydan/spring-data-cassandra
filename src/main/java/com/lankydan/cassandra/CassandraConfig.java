@@ -1,9 +1,14 @@
 package com.lankydan.cassandra;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.cassandra.config.AbstractReactiveCassandraConfiguration;
 import org.springframework.data.cassandra.config.SchemaAction;
+import org.springframework.data.cassandra.core.cql.keyspace.CreateKeyspaceSpecification;
+import org.springframework.data.cassandra.core.cql.keyspace.DropKeyspaceSpecification;
+import org.springframework.data.cassandra.core.cql.keyspace.KeyspaceOption;
 import org.springframework.data.cassandra.repository.config.EnableReactiveCassandraRepositories;
 
 @Configuration
@@ -44,6 +49,21 @@ public class CassandraConfig extends AbstractReactiveCassandraConfiguration {
 
   @Override
   public String[] getEntityBasePackages() {
-    return new String[]{basePackages};
+    return new String[] {basePackages};
+  }
+
+  @Override
+  protected List<CreateKeyspaceSpecification> getKeyspaceCreations() {
+    final CreateKeyspaceSpecification specification =
+        CreateKeyspaceSpecification.createKeyspace(keyspace)
+            .ifNotExists()
+            .with(KeyspaceOption.DURABLE_WRITES, true)
+            .withSimpleReplication();
+    return List.of(specification);
+  }
+
+  @Override
+  protected List<DropKeyspaceSpecification> getKeyspaceDrops() {
+    return List.of(DropKeyspaceSpecification.dropKeyspace(keyspace));
   }
 }
