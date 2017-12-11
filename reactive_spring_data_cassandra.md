@@ -16,7 +16,7 @@ In this post we will be using Reactor Core instead of RxJava.
 
 Now if you haven't realised yet, I am going to say the word "reactive" a lot. Most of the setup required to go from a normal Spring Data Cassandra application to a reactive one is the addition of "reactive" to the class name. For example we will use `AbstractReactiveCassandraConfiguration` instead of `AbstractCassandraConfiguration` and `@EnableReactiveCassandraRepositories` rather than `@EnableCassandraRepositories`. 
 
-Below is a basic configuration class to get everything setup. More explaination into the individual components of this class can be found in my earlier post [Getting started with Spring Data Cassandra](https://lankydanblog.com/2017/10/12/getting-started-with-spring-data-cassandra/).
+Below is a basic configuration class to get everything setup. More explanation into the individual components of this class can be found in my earlier post [Getting started with Spring Data Cassandra](https://lankydanblog.com/2017/10/12/getting-started-with-spring-data-cassandra/).
 ```java
 @Configuration
 @EnableReactiveCassandraRepositories
@@ -162,4 +162,4 @@ There is quite a lot being printed out here but hopefully you can get the idea o
 
 I stole this conclusion straight from [A quick look into reactive streams with Spring Data and MongoDB](https://lankydanblog.com/2017/07/16/a-quick-look-into-reactive-streams-with-spring-data-and-mongodb/). In conclusion getting up a running using Reactive Streams with Spring Data and Cassandra is no harder than using it's non reactive counterpart. All we need to do is insert the word “reactive” into a few classes and interface names and then use the `Flux` and `Mono` types (from Reactor) instead of directly returning a list or object.
 
-The code used in this post can be found on my [GitHub]
+The code used in this post can be found on my [GitHub](https://github.com/lankydan/spring-data-cassandra/tree/reactive-spring-data-cassandra).
