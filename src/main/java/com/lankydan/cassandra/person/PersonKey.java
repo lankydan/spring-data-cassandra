@@ -1,4 +1,4 @@
-package com.lankydan.cassandra;
+package com.lankydan.cassandra.person;
 
 import com.datastax.driver.core.DataType;
 import org.springframework.data.cassandra.core.mapping.PrimaryKeyClass;

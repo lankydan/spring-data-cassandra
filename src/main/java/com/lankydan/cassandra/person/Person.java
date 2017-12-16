@@ -1,4 +1,4 @@
-package com.lankydan.cassandra;
+package com.lankydan.cassandra.person;
 
 import org.springframework.data.cassandra.core.mapping.Column;
 import org.springframework.data.cassandra.core.mapping.PrimaryKey;

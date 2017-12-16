@@ -1,4 +1,4 @@
-package com.lankydan.cassandra;
+package com.lankydan.cassandra.person;
 
 import org.springframework.data.cassandra.repository.ReactiveCassandraRepository;
 import org.springframework.stereotype.Repository;
